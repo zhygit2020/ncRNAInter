@@ -27,7 +27,7 @@
  |- README.md
  |- LICENSE
 ```
-Directory of `comparation` deposits the reproduced methods in comparism with RNAInter, including their datasets and retrained models. Usage is explained in `./comparation/README.md`.
+Directory of `comparation` deposits the reproduced methods used in comparism with RNAInter, including their datasets and retrained models. Usage is explained in `./comparation/README.md`.
 
 Directory of `statistic` deposits the scripts we used to plot. Usage is explained in `./statistic/README.md`.
 
