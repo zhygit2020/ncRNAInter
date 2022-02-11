@@ -2,7 +2,6 @@
 [![python 3.7](https://img.shields.io/badge/python-3.7-brightgreen)](https://www.python.org/)
 ### RNAInter: A Novel Strategy Based on Graph Neural Network to Discover Interactions between lncRNA and miRNA
 ##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Honglin Li and Feng Zhu
-For more information, please refer to the publication in [bioRxiv 2020.05.13.094953.](https://www.biorxiv.org/content/10.1101/2020.05.13.094953v1)
 
 ## Install
 1. Download all pretrained models and source codes of RNAInter.
