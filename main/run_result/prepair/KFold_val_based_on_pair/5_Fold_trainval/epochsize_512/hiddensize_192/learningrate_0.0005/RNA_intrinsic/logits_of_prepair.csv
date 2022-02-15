@@ -1,0 +1,4 @@
+,pair_idx,pair_id,logits_0th_model,logits_1th_model,logits_2th_model,logits_3th_model,logits_4th_model,logits,mirna,lncrna
+0,0,-1,0.9775155,0.9999907,0.99968445,0.99987483,0.9988906,0.9951912,hsa-miR-23a-3p,ENST00000468186.5
+1,1,-2,0.95502293,0.9995573,0.9999745,0.9958692,0.99980396,0.99004555,hsa-miR-16-5p,ENST00000509012.5
+2,2,-3,1.0,1.0,1.0,0.9999995,1.0,0.9999999,hsa-let-7a-5p,ENST00000416066.1

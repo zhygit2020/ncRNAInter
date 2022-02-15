@@ -63,16 +63,21 @@ class dataloader:
     def load_pair_trainval(self):
         file_name = 'trainval_pairs_run.csv'
         label_path = self.prj_path / 'data' / 'processed_data' / 'pair_trainval' / 'run_info'
-        Label_data = pd.read_csv(label_path / file_name)[['mirna','lncrna','Label','mirna_id','lncrna_id','pair_index']]
+        Label_data = pd.read_csv(label_path / file_name)[['mirna','lncrna','Label','mirna_id','lncrna_id','pair_id']]
         return Label_data
     
     def load_pair_test(self):
         file_name = 'test_pairs_run.csv'
         label_path = self.prj_path / 'data' / 'processed_data' / 'pair_test' / 'run_info'
-        Label_data = pd.read_csv(label_path / file_name)[['mirna','lncrna','Label','mirna_id','lncrna_id','pair_index']]
+        Label_data = pd.read_csv(label_path / file_name)[['mirna','lncrna','Label','mirna_id','lncrna_id','pair_id']]
         return Label_data
 
-    def load_target_rna(self):
+    def load_pair_predict(self):
+        target_pair_path = self.prj_path / 'data' / 'run_data'
+        target_pair = pd.read_csv(target_pair_path / 'target_pair.csv')[['mirna','lncrna','Label','mirna_id','lncrna_id','pair_id']]
+        return target_pair
+
+    def load_rna_predict(self):
         target_rna_path = self.prj_path / 'data' / 'run_data'
         target_rna = pd.read_csv(target_rna_path / 'target_rna.csv')
         mirna_id_o = pd.read_csv(self.prj_path / 'data' / 'original_data' / 'pair_unique_RNAs' / 'mirna' / 'mirna_names_unique_seq.csv')
@@ -86,7 +91,7 @@ class dataloader:
 class datadealer:
     def __init__(self,params):
         self.params = params
-        self.prj_path = Path(__file__).parent.resolve().parent.resolve()  # 根据__file__的path设定多少个parent.resolve()
+        self.prj_path = Path(__file__).parent.resolve().parent.resolve()
         self.loader = dataloader(params=self.params)
 
     def deal_trainval_RNA_data(self):
@@ -113,11 +118,37 @@ class datadealer:
         print('>>>>Label data loaded<<<<')
         return Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info
 
+    def deal_predict_RNA_data(self):
+        mirna_fea, lncrna_fea = self.loader.load_RNA_fea_csv()
+        print('>>>>RNA fea loaded<<<<')
+        if self.params.task_type == 'run':
+            Label_data = self.loader.load_pair_predict()
+        elif self.params.task_type == 'trainval':
+            print('you give the wrong task type')
+            sys.exit()
+        print('>>>>Label data loaded<<<<')
+        print('dealing with predict pair data')
+        Label_data_pair = copy.deepcopy(Label_data)
+        mirna_node = Label_data_pair.drop(columns=['Label', 'pair_id', 'lncrna', 'lncrna_id']).drop_duplicates(subset = ['mirna'], keep='first').copy()
+        lncrna_node = Label_data_pair.drop(columns=['Label', 'pair_id', 'mirna', 'mirna_id']).drop_duplicates(subset = ['lncrna'], keep='first').copy()
+        mirna_node_info = pd.merge(mirna_node, mirna_fea, left_on='mirna', right_on='Seqname', how='left', sort=False)
+        mirna_node_info = mirna_node_info.dropna(subset=['Seqname'])
+        lncrna_node_info = pd.merge(lncrna_node, lncrna_fea, left_on='lncrna', right_on='Seqname', how='left', sort=False)
+        lncrna_node_info = lncrna_node_info.dropna(subset=['Seqname'])
+
+        # merge dimension for feature to minus
+        mirna_merge_dim = mirna_node.shape[1]
+        lncrna_merge_dim = lncrna_node.shape[1]
+
+        Label_data_pair = Label_data_pair[Label_data_pair['mirna'].isin(mirna_node_info['mirna'])]
+        Label_data_pair = Label_data_pair[Label_data_pair['lncrna'].isin(lncrna_node_info['lncrna'])]
+        return Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info
+
     def deal_trainval_graph_dataset(self, mirna_fea, lncrna_fea, Label_data):
         print('dealing with trainval pair data')
         Label_data_pair = copy.deepcopy(Label_data)
-        mirna_node = Label_data_pair.drop(columns=['Label', 'pair_index', 'lncrna', 'lncrna_id']).drop_duplicates(subset = ['mirna'], keep='first').copy()
-        lncrna_node = Label_data_pair.drop(columns=['Label', 'pair_index', 'mirna', 'mirna_id']).drop_duplicates(subset = ['lncrna'], keep='first').copy()
+        mirna_node = Label_data_pair.drop(columns=['Label', 'pair_id', 'lncrna', 'lncrna_id']).drop_duplicates(subset = ['mirna'], keep='first').copy()
+        lncrna_node = Label_data_pair.drop(columns=['Label', 'pair_id', 'mirna', 'mirna_id']).drop_duplicates(subset = ['lncrna'], keep='first').copy()
         mirna_node_info = pd.merge(mirna_node, mirna_fea, left_on='mirna', right_on='Seqname', how='left', sort=False)
         mirna_node_info = mirna_node_info.dropna(subset=['Seqname'])
         lncrna_node_info = pd.merge(lncrna_node, lncrna_fea, left_on='lncrna', right_on='Seqname', how='left', sort=False)
@@ -138,8 +169,8 @@ class datadealer:
     def deal_test_graph_dataset(self, mirna_fea, lncrna_fea, Label_data):
         print('dealing with test pair data')
         Label_data_pair = copy.deepcopy(Label_data)
-        mirna_node = Label_data_pair.drop(columns=['Label', 'pair_index', 'lncrna', 'lncrna_id']).drop_duplicates(subset = ['mirna'], keep='first').copy()
-        lncrna_node = Label_data_pair.drop(columns=['Label', 'pair_index', 'mirna', 'mirna_id']).drop_duplicates(subset = ['lncrna'], keep='first').copy()
+        mirna_node = Label_data_pair.drop(columns=['Label', 'pair_id', 'lncrna', 'lncrna_id']).drop_duplicates(subset = ['mirna'], keep='first').copy()
+        lncrna_node = Label_data_pair.drop(columns=['Label', 'pair_id', 'mirna', 'mirna_id']).drop_duplicates(subset = ['lncrna'], keep='first').copy()
         mirna_node_info = pd.merge(mirna_node, mirna_fea, left_on='mirna', right_on='Seqname', how='left', sort=False)
         mirna_node_info = mirna_node_info.dropna(subset=['Seqname'])
         lncrna_node_info = pd.merge(lncrna_node, lncrna_fea, left_on='lncrna', right_on='Seqname', how='left', sort=False)

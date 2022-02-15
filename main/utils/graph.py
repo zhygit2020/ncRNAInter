@@ -63,9 +63,9 @@ class graphbuilder:
         v_n = np.array([id2nodeidx_trainval[i] for i in Label_data_pair['lncrna_id'].values])
         labels = torch.tensor(Label_data_pair['Label'].values, dtype=torch.float32).unsqueeze(-1)
         edgeweight = torch.tensor(Label_data_pair['Label'].values, dtype=torch.float32).unsqueeze(-1)
-        pair_idxs = torch.tensor(Label_data_pair['pair_index'].values, dtype=torch.float32).unsqueeze(-1)
-        graph.add_edges(u_n, v_n, {'Labels': labels, 'edgeweight': edgeweight, 'pair_index': pair_idxs})
-        graph.add_edges(v_n, u_n, {'Labels': labels, 'edgeweight': edgeweight, 'pair_index': pair_idxs})
+        pair_id = torch.tensor(Label_data_pair['pair_id'].values, dtype=torch.float32).unsqueeze(-1)
+        graph.add_edges(u_n, v_n, {'Labels': labels, 'edgeweight': edgeweight, 'pair_id': pair_id})
+        graph.add_edges(v_n, u_n, {'Labels': labels, 'edgeweight': edgeweight, 'pair_id': pair_id})
         # add self-loop
         graph.add_edges(graph.nodes(), graph.nodes(),{'edgeweight': torch.ones(graph.number_of_nodes(), dtype=torch.float32).unsqueeze(-1)})
         graph.readonly()
@@ -75,13 +75,14 @@ class graphbuilder:
 
         return graph, id2nodeidx_trainval, u_n, v_n, Label_data_pair, mirna_node_info, lncrna_node_info
 
-    def buildgraph_test(self, graph, Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info, row, id2nodeidx):
+    def buildgraph(self, graph, Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info, row, id2nodeidx):
         graph_test = copy.deepcopy(graph)
         u_name = Label_data_pair['mirna'].to_frame().iloc[[row]]
         u_id = Label_data_pair['mirna_id'].to_frame().iloc[[row]]
         v_name = Label_data_pair['lncrna'].to_frame().iloc[[row]]
         v_id = Label_data_pair['lncrna_id'].to_frame().iloc[[row]]
         Labels = Label_data_pair['Label'].to_frame().iloc[[row]]
+        pair_id = Label_data_pair['pair_id'].to_frame().iloc[[row]]
         
         u_nfea = pd.merge(mirna_node_info, u_id, on='mirna_id', sort=False, how='right')
         u_nfea = u_nfea.iloc[:,mirna_merge_dim+1:].values 
@@ -109,7 +110,7 @@ class graphbuilder:
             graph_test.add_edges(v_idx, v_idx, {'edgeweight': torch.ones(1, dtype=torch.float32).unsqueeze(-1)})
         else : v_idx = id2nodeidx[v_id.values[0][0]]
 
-        graph_test.add_edges(u_idx, v_idx, {'edgeweight': torch.zeros(1, dtype=torch.float32).unsqueeze(-1)})
+        graph_test.add_edges(u_idx, v_idx, {'edgeweight': torch.zeros(1, dtype=torch.float32).unsqueeze(-1), 'pair_id': torch.tensor(pair_id.values, dtype=torch.float32).unsqueeze(-1)})
 
         return graph_test, u_name.values, v_name.values, Labels.values
 

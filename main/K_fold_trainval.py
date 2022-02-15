@@ -70,12 +70,12 @@ class Trainer:
         total_loss_t = 0
         edge_labels_t = torch.tensor([],device=self.device)
         edge_logits_t = torch.tensor([],device=self.device)
-        edge_idxs_t = torch.tensor([],device=self.device)
+        edge_ids_t = torch.tensor([],device=self.device)
         with tqdm.tqdm(train_dataloader, file=kth_log_file) as tq: 
             for step, (input_nodes, pair_graph, blocks_MFGS) in enumerate(tq):           
                 blocks = [b.to(self.device) for b in blocks_MFGS]
                 edge_subgraph = pair_graph.to(self.device)
-                batch_idxs = edge_subgraph.edata['pair_index']
+                batch_ids = edge_subgraph.edata['pair_id']
                 batch_labels = edge_subgraph.edata['Labels']
                 input_features = blocks[0].srcdata['nfea']
                 logits_t = model(edge_subgraph, blocks, input_features, tasktype = 'train') 
@@ -87,10 +87,10 @@ class Trainer:
                 total_loss_t += loss.item()
                 edge_labels_t = torch.cat([edge_labels_t, batch_labels.detach()],dim=0)
                 edge_logits_t = torch.cat([edge_logits_t, logits_t.detach()],dim=0)
-                edge_idxs_t = torch.cat([edge_idxs_t, batch_idxs.detach()],dim=0)
+                edge_ids_t = torch.cat([edge_ids_t, batch_ids.detach()],dim=0)
                 tq.set_postfix({'edgeprediction[0]': '%.03f' % logits_t[0], 'edgelabel[0]': '%.03f' % batch_labels[0], 'batch_loss': '%.03f' % loss.item()}, refresh=False)
 
-        return total_loss_t, edge_labels_t, edge_logits_t, edge_idxs_t
+        return total_loss_t, edge_labels_t, edge_logits_t, edge_ids_t
 
     def validate(self, graph_v, edgeidxs, model, kth_log_file):
         val_dataloader = dgl.dataloading.EdgeDataLoader(graph_v, edgeidxs, self.sampler,
@@ -107,12 +107,12 @@ class Trainer:
         total_loss_v = 0
         edge_labels_v = torch.tensor([],device=self.device)
         edge_logits_v = torch.tensor([],device=self.device)
-        edge_idxs_v = torch.tensor([],device=self.device)
+        edge_ids_v = torch.tensor([],device=self.device)
         with tqdm.tqdm(val_dataloader, file=kth_log_file) as tq:
             for step, (input_nodes, pair_graph, blocks_MFGS) in enumerate(tq):
                 blocks = [b.to(self.device) for b in blocks_MFGS]
                 edge_subgraph = pair_graph.to(self.device)
-                batch_idxs = edge_subgraph.edata['pair_index']
+                batch_ids = edge_subgraph.edata['pair_id']
                 batch_labels = edge_subgraph.edata['Labels']
                 input_features = blocks[0].srcdata['nfea']
                 with torch.no_grad():
@@ -122,11 +122,11 @@ class Trainer:
                 total_loss_v += val_loss.item()
                 edge_labels_v = torch.cat([edge_labels_v, batch_labels.detach()],dim=0)
                 edge_logits_v = torch.cat([edge_logits_v, logits_v.detach()],dim=0)
-                edge_idxs_v = torch.cat([edge_idxs_v, batch_idxs.detach()],dim=0)
+                edge_ids_v = torch.cat([edge_ids_v, batch_ids.detach()],dim=0)
 
                 tq.set_postfix({'edgeprediction[0]': '%.03f' % logits_v[0], 'edgelabel[0]': '%.03f' % batch_labels[0], 'val_batch_loss': '%.03f' % val_loss.item()}, refresh=False)
 
-        return total_loss_v, edge_labels_v, edge_logits_v, edge_idxs_v
+        return total_loss_v, edge_labels_v, edge_logits_v, edge_ids_v
 
     def evaluate(self, y_label, y_score):
         # ROC, AUC
@@ -157,24 +157,6 @@ class Trainer:
             y = self.Label_data['Label'].values
             for (t,v) in skf.split(X, y):
                 list.append((X[t],X[v]))
-        elif split_type == 'mirna':
-            print(f"Apply {self.params.KFold_num}-Fold validation based on mirna")
-            kf = KFold(n_splits=self.params.KFold_num, shuffle=False)
-            list = []
-            X = self.mirna_node_info['mirna_id'].values
-            for i, j in kf.split(X):
-                t = self.Label_data[self.Label_data['mirna_id'].isin(X[i])].index.values
-                v = self.Label_data[self.Label_data['mirna_id'].isin(X[j])].index.values
-                list.append((t,v))
-        elif split_type == 'lncrna':
-            print(f"Apply {self.params.KFold_num}-Fold validation based on lncrna")
-            kf = KFold(n_splits=self.params.KFold_num, shuffle=False)
-            list = []
-            X = self.lncrna_node_info['lncrna_id'].values
-            for i, j in kf.split(X):
-                t = self.Label_data[self.Label_data['lncrna_id'].isin(X[i])].index.values
-                v = self.Label_data[self.Label_data['lncrna_id'].isin(X[j])].index.values
-                list.append((t,v))
         
         return list
     
@@ -202,7 +184,7 @@ class Trainer:
         _model = None
         _optimizer = None
         _loss_epochs_t, _acc_epochs_t, _loss_epochs_v, _acc_epochs_v = {},{},{},{}
-        _epoch_edge_labels_t, _epoch_edge_logits_t, _epoch_edge_idxs_t, _epoch_edge_labels_v, _epoch_edge_logits_v, _epoch_edge_idxs_v = torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([])
+        _epoch_edge_labels_t, _epoch_edge_logits_t, _epoch_edge_ids_t, _epoch_edge_labels_v, _epoch_edge_logits_v, _epoch_edge_ids_v = torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([])
 
         # k'th graph remove validation information
         kth_graph = copy.deepcopy(self.base_graph)
@@ -226,22 +208,22 @@ class Trainer:
         for epoch in range(self.params.n_epochs):
             # train
             print(f"prepare to train for epoch {epoch}", file=kth_log_file)
-            epoch_loss_t, epoch_edge_labels_t, epoch_edge_logits_t, epoch_edge_idxs_t = self.train(graph_t = kth_graph, trainidxs = train, model = kth_model, optimizer=kth_optimizer, kth_log_file=kth_log_file)
+            epoch_loss_t, epoch_edge_labels_t, epoch_edge_logits_t, epoch_edge_ids_t = self.train(graph_t = kth_graph, trainidxs = train, model = kth_model, optimizer=kth_optimizer, kth_log_file=kth_log_file)
             # move to cpu if in gpu
             epoch_edge_labels_t = epoch_edge_labels_t.cpu() 
             epoch_edge_logits_t = epoch_edge_logits_t.cpu() 
-            epoch_edge_idxs_t = epoch_edge_idxs_t.cpu() 
+            epoch_edge_ids_t = epoch_edge_ids_t.cpu() 
             # evaluate train
             fprs_t, tprs_t, thresholds_t, auc_t, tn_t, fp_t, fn_t, tp_t, acc_t, mcc_t, precision_t, specificity_t, recall_t, f1_t = self.evaluate(y_label=epoch_edge_labels_t, y_score=epoch_edge_logits_t)
             loss_t = epoch_loss_t / len(train)
             print('time cost: %.4f min' % ((time.time()-time_start)/60), file=kth_log_file)     
             # validation
             print(f"prepare to validate for epoch {epoch}", file=kth_log_file)
-            epoch_loss_v, epoch_edge_labels_v, epoch_edge_logits_v, epoch_edge_idxs_v = self.validate(graph_v=kth_graph, edgeidxs= val, model = kth_model, kth_log_file=kth_log_file)
+            epoch_loss_v, epoch_edge_labels_v, epoch_edge_logits_v, epoch_edge_ids_v = self.validate(graph_v=kth_graph, edgeidxs= val, model = kth_model, kth_log_file=kth_log_file)
             # move to cpu if in gpu
             epoch_edge_labels_v = epoch_edge_labels_v.cpu() 
             epoch_edge_logits_v = epoch_edge_logits_v.cpu() 
-            epoch_edge_idxs_v = epoch_edge_idxs_v.cpu() 
+            epoch_edge_ids_v = epoch_edge_ids_v.cpu() 
             # evaluate train
             fprs_v, tprs_v, thresholds_v, auc_v, tn_v, fp_v, fn_v, tp_v, acc_v, mcc_v, precision_v, specificity_v, recall_v, f1_v = self.evaluate(y_label=epoch_edge_labels_v, y_score=epoch_edge_logits_v)
             loss_v = epoch_loss_v / len(val)
@@ -254,7 +236,7 @@ class Trainer:
             if _acc_v <= acc_v:
                 _epoch = epoch
 
-                _epoch_edge_labels_t, _epoch_edge_logits_t, _epoch_edge_idxs_t, _epoch_edge_labels_v, _epoch_edge_logits_v, _epoch_edge_idxs_v = epoch_edge_labels_t, epoch_edge_logits_t, epoch_edge_idxs_t, epoch_edge_labels_v, epoch_edge_logits_v, epoch_edge_idxs_v 
+                _epoch_edge_labels_t, _epoch_edge_logits_t, _epoch_edge_ids_t, _epoch_edge_labels_v, _epoch_edge_logits_v, _epoch_edge_ids_v = epoch_edge_labels_t, epoch_edge_logits_t, epoch_edge_ids_t, epoch_edge_labels_v, epoch_edge_logits_v, epoch_edge_ids_v 
                 
                 _loss_t = loss_t
                 _loss_v = loss_v
@@ -305,8 +287,8 @@ class Trainer:
         score_savepath = self.save_path / 'score_data' / f'{k}th_Fold'
         if not score_savepath.exists():
             score_savepath.mkdir(parents=True)
-        pd.DataFrame({'eidxs':_epoch_edge_idxs_t.squeeze(-1), 'labels':_epoch_edge_labels_t.squeeze(-1), 'scores':_epoch_edge_logits_t.squeeze(-1)}).to_csv(score_savepath / f'train_score_for_{k}th_Fold.csv')
-        pd.DataFrame({'eidxs':_epoch_edge_idxs_v.squeeze(-1), 'labels':_epoch_edge_labels_v.squeeze(-1), 'scores':_epoch_edge_logits_v.squeeze(-1)}).to_csv(score_savepath / f'val_score_for_{k}th_Fold.csv')
+        pd.DataFrame({'eids':_epoch_edge_ids_t.squeeze(-1), 'labels':_epoch_edge_labels_t.squeeze(-1), 'scores':_epoch_edge_logits_t.squeeze(-1)}).to_csv(score_savepath / f'train_score_for_{k}th_Fold.csv')
+        pd.DataFrame({'eids':_epoch_edge_ids_v.squeeze(-1), 'labels':_epoch_edge_labels_v.squeeze(-1), 'scores':_epoch_edge_logits_v.squeeze(-1)}).to_csv(score_savepath / f'val_score_for_{k}th_Fold.csv')
 
         # store best kth train-val data
         for ass in assess:
@@ -386,7 +368,7 @@ if __name__ == '__main__':
     parser.add_argument("--random_seed", type=int, default=42)
     parser.add_argument("--dropout", type=float, default=0.1, help="dropout probability")
     parser.add_argument("--gpu", type=int, default=-1, help="GPU id, -1 for cpu")
-    parser.add_argument("--lr", type=float, default=5e-4, help="learning rate")
+    parser.add_argument("--lr", type=float, default=1e-3, help="learning rate")
     parser.add_argument("--weight_decay", type=float, default=5e-4, help="Weight for L2 loss") 
     parser.add_argument("--n_epochs", type=int, default=512, help="number of training epochs")
     parser.add_argument("--hidden_dim", type=int, default=192, help="number of hidden GraphSAGE units")

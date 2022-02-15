@@ -31,10 +31,13 @@ class Runner:
         self.params = params
         print('torch.cuda.is_available():', torch.cuda.is_available())
         self.prj_path = Path(__file__).parent.resolve()
-        self.predict_save_path = self.prj_path / 'test_result' / 'predict' / f'KFold_val_based_on_{self.params.KFold_val_type}' / f'{self.params.KFold_num}_Fold_trainval' / f'epochsize_{self.params.n_epochs}' / f'hiddensize_{self.params.hidden_dim}' / f'learningrate_{self.params.lr}' / self.params.feature_type
-        if not self.predict_save_path.exists():
-            self.predict_save_path.mkdir(parents=True)
-        self.test_save_path = self.prj_path / 'test_result' / 'test' / f'KFold_val_based_on_{self.params.KFold_val_type}' / f'{self.params.KFold_num}_Fold_trainval' / f'epochsize_{self.params.n_epochs}' / f'hiddensize_{self.params.hidden_dim}' / f'learningrate_{self.params.lr}' / self.params.feature_type
+        self.prerna_save_path = self.prj_path / 'run_result' / 'prerna' / f'KFold_val_based_on_{self.params.KFold_val_type}' / f'{self.params.KFold_num}_Fold_trainval' / f'epochsize_{self.params.n_epochs}' / f'hiddensize_{self.params.hidden_dim}' / f'learningrate_{self.params.lr}' / self.params.feature_type
+        if not self.prerna_save_path.exists():
+            self.prerna_save_path.mkdir(parents=True)
+        self.prepair_save_path = self.prj_path / 'run_result' / 'prepair' / f'KFold_val_based_on_{self.params.KFold_val_type}' / f'{self.params.KFold_num}_Fold_trainval' / f'epochsize_{self.params.n_epochs}' / f'hiddensize_{self.params.hidden_dim}' / f'learningrate_{self.params.lr}' / self.params.feature_type
+        if not self.prepair_save_path.exists():
+            self.prepair_save_path.mkdir(parents=True)
+        self.test_save_path = self.prj_path / 'run_result' / 'test' / f'KFold_val_based_on_{self.params.KFold_val_type}' / f'{self.params.KFold_num}_Fold_trainval' / f'epochsize_{self.params.n_epochs}' / f'hiddensize_{self.params.hidden_dim}' / f'learningrate_{self.params.lr}' / self.params.feature_type
         if not self.test_save_path.exists():
             self.test_save_path.mkdir(parents=True)
         self.device = torch.device('cpu' if self.params.gpu == -1 else f'cuda:{self.params.gpu}')
@@ -45,10 +48,10 @@ class Runner:
         print('original graph loaded')
         # graphbuilder
         self.graphbuilder = graph.graphbuilder(self.params)
-        if params.task_type == 'train':
+        if params.task_type == 'trainval':
             print('Error >>> you give the wrong task type')
             sys.exit()
-        elif params.task_type == 'test':
+        elif params.task_type == 'run':
             pass
         # id2idx dic
         self.id2nodeidx_trainval = np.load(self.graph_path / 'id2nodeidx_trainval.npy', allow_pickle=True).item()                
@@ -71,18 +74,18 @@ class Runner:
 
         kfold_test_data = {}
         # initialize
-        kth_row_labels, kth_row_scores, kth_row_idxs = torch.tensor([]),torch.tensor([]),torch.tensor([])
+        kth_row_labels, kth_row_scores, kth_row_idxs, kth_row_ids = torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([])
         kth_row_losss = 0
         
         with tqdm.tqdm(range(Label_data_pair.shape[0])) as tq:            
             for step, row in enumerate(tq): 
-                kth_row_graph, u_name, v_name, Labels = self.graphbuilder.buildgraph_test(graph, Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info, row, self.id2nodeidx_trainval)
+                kth_row_graph, u_name, v_name, Labels = self.graphbuilder.buildgraph(graph, Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info, row, self.id2nodeidx_trainval)
                 test_edgeidx = torch.tensor(kth_row_graph.number_of_edges() - 1, dtype=torch.int64).unsqueeze(0)
                 test_dataloader = dgl.dataloading.EdgeDataLoader(kth_row_graph, test_edgeidx, self.sampler,
                                                                 batch_size = 1,
                                                                 shuffle = False,
                                                                 drop_last = False,
-                                                                num_workers = 4,
+                                                                num_workers = 1,
                                                                 device = self.device) 
                 # Sets the module in evaluating mode
                 kth_model.eval()
@@ -91,10 +94,12 @@ class Runner:
                     blocks = [b.to(self.device) for b in blocks_MFGS]
                     edge_subgraph = pair_graph.to(self.device)
                     input_features = blocks[0].srcdata['nfea']
+                    batch_ids = edge_subgraph.edata['pair_id']
                     with torch.no_grad():
                         logits = kth_model(edge_subgraph, blocks, input_features, tasktype = task_type).cpu()
                 kth_row_labels = torch.cat([kth_row_labels, torch.tensor(Labels, dtype=torch.float32)],dim=0)
                 kth_row_scores = torch.cat([kth_row_scores, logits],dim=0)
+                kth_row_ids = torch.cat([kth_row_ids, batch_ids],dim=0)
                 kth_row_idxs = torch.cat([kth_row_idxs, torch.tensor([[row]], dtype=torch.float32)],dim=0)
                 kth_row_losss += F.binary_cross_entropy(logits, torch.tensor(Labels, dtype=torch.float32), reduction = 'sum')
                 tq.set_postfix({'row': '%s' % row, 'edgeprediction': '%.03f' % logits, 'Label': '%s' % Labels[0][0]}, refresh=False)
@@ -112,7 +117,7 @@ class Runner:
         score_savepath = self.test_save_path / 'score_data' / f'{k}th_Fold'
         if not score_savepath.exists():
             score_savepath.mkdir(parents=True)
-        pd.DataFrame({'eidxs':kth_row_idxs.cpu().squeeze(-1), 'labels':kth_row_labels.squeeze(-1), 'scores':kth_row_scores.squeeze(-1)}).to_csv(score_savepath / f'train_score_for_{k}th_Fold.csv')
+        pd.DataFrame({'eidxs':kth_row_idxs.cpu().squeeze(-1), 'eids':kth_row_ids.cpu().squeeze(-1), 'labels':kth_row_labels.squeeze(-1), 'scores':kth_row_scores.squeeze(-1)}).to_csv(score_savepath / f'train_score_for_{k}th_Fold.csv')
         
         # save kth Fold statistic data
         for ass in assess:
@@ -123,8 +128,51 @@ class Runner:
 
         return kfold_test_data
 
-    def pre_KFold(self, k, graph, target, for_target, mi2lnc, k_average_logits):
-        print('----------run for %s th Fold model----------' %k)
+    def prepair_KFold(self, k, graph, Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info, k_average_logits):
+        print('----------predict on pairs for %s th Fold model----------' %k)
+        task_type = 'predict'
+        kth_model = GNN(in_feats = self.dense_dim,
+                    n_hidden = self.params.hidden_dim,
+                    n_classes = self.num_label_kinds,
+                    n_layers = self.params.n_layers,
+                    node_num = graph.number_of_nodes(),
+                    id2nodeidx = self.id2nodeidx_trainval,
+                    activation = F.relu,
+                    dropout = self.params.dropout).to(self.device)
+        self.load_kth_model(model=kth_model, k=k)
+
+        # initialize
+        kth_logits = pd.DataFrame(columns = ['pair_idx','pair_id',f'logits_{k}th_model'])
+        with tqdm.tqdm(range(Label_data_pair.shape[0])) as tq:            
+            for step, row in enumerate(tq): 
+                kth_row_graph, u_name, v_name, Labels = self.graphbuilder.buildgraph(graph, Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info, row, self.id2nodeidx_trainval)
+                test_edgeidx = torch.tensor(kth_row_graph.number_of_edges() - 1, dtype=torch.int64).unsqueeze(0)
+                test_dataloader = dgl.dataloading.EdgeDataLoader(kth_row_graph, test_edgeidx, self.sampler,
+                                                                batch_size = 1,
+                                                                shuffle = False,
+                                                                drop_last = False,
+                                                                num_workers = 1,
+                                                                device = self.device) 
+                # Sets the module in evaluating mode
+                kth_model.eval()
+                for input_nodes, pair_graph, blocks_MFGS in test_dataloader:
+                    # feature copy to(self.device)
+                    blocks = [b.to(self.device) for b in blocks_MFGS]
+                    edge_subgraph = pair_graph.to(self.device)
+                    input_features = blocks[0].srcdata['nfea']
+                    batch_ids = edge_subgraph.edata['pair_id']
+                    with torch.no_grad():
+                        logits = kth_model(edge_subgraph, blocks, input_features, tasktype = task_type).cpu()
+                    kth_logits = kth_logits.append({'pair_idx':row, 'pair_id':batch_ids.detach().squeeze(-1).squeeze(-1).squeeze(-1).numpy(), f'logits_{k}th_model':logits.detach().squeeze(-1).squeeze(-1).numpy()}, ignore_index=True)
+                tq.set_postfix({'row': '%s' % row, 'edgeprediction': '%.03f' % logits}, refresh=False)
+        
+        # save kth Fold predict result
+        kth_logits = kth_logits.astype({'pair_idx': 'int64', 'pair_id': 'int64', f'logits_{k}th_model': 'float32'})               
+        k_average_logits = pd.merge(k_average_logits,kth_logits,on=['pair_idx','pair_id'],how='left',sort=False)
+        return k_average_logits
+
+    def prerna_KFold(self, k, graph, target, for_target, mi2lnc, k_average_logits):
+        print('----------predict on rnas for %s th Fold model----------' %k)
         task_type = 'predict'
         kth_model = GNN(in_feats = self.dense_dim,
                     n_hidden = self.params.hidden_dim,
@@ -153,7 +201,7 @@ class Runner:
                                                                 batch_size = 1,
                                                                 shuffle = False,
                                                                 drop_last = False,
-                                                                num_workers = 4,
+                                                                num_workers = 1,
                                                                 device = self.device)
                 # Sets the module in evaluating mode
                 kth_model.eval()
@@ -179,11 +227,7 @@ class Runner:
         assess = ['fprs', 'tprs', 'thresholds', 'tn', 'fp', 'fn', 'tp', 'loss', 'acc', 'auc', 'mcc', 'precision', 'recall', 'specificity', 'f1']
         allfold_test_data = {}
         # load test info
-        if self.params.task_type == 'run':
-            Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info = self.graphbuilder.dealer.deal_test_RNA_data()
-        elif self.params.task_type == 'trainval':
-            print('you give the wrong task type')
-            sys.exit()
+        Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info = self.graphbuilder.dealer.deal_test_RNA_data()
         print(f'test number = {Label_data_pair.shape[0]}')
 
         for k in range(self.params.KFold_num):
@@ -204,11 +248,23 @@ class Runner:
             f"Average Result >>>> Test ACC {Ave_res['acc']:.4f}, Test AUC {Ave_res['auc']:.4f}, Test MCC {Ave_res['mcc']:.4f}, Test loss {Ave_res['loss']:.4f}, Test precision {Ave_res['precision']:.4f}, Test recall {Ave_res['recall']:.4f}, Test specificity {Ave_res['specificity']:.4f}, Test f1 {Ave_res['f1']:.4f}",
             f"Test TN {Ave_res['tn']:.4f}, Test FP {Ave_res['fp']:.4f}, Test_FN {Ave_res['fn']:.4f}, Test_TP {Ave_res['tp']:.4f}")
 
-    def predict(self):
+    def predict_on_pair(self):
+        # load pair info
+        Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info = self.graphbuilder.dealer.deal_predict_RNA_data()
+        print(f'test number = {Label_data_pair.shape[0]}')
+        # result storage
+        k_average_logits = pd.DataFrame({'pair_idx':Label_data_pair.index, 'pair_id':Label_data_pair['pair_id']})
+        for k in range(self.params.KFold_num):
+            k_average_logits = self.prepair_KFold(k, self.graph_trainval, Label_data_pair, mirna_merge_dim, lncrna_merge_dim, mirna_node_info, lncrna_node_info, k_average_logits)
+        k_average_logits['logits'] = k_average_logits[[f'logits_{k}th_model' for k in range(self.params.KFold_num)]].mean(axis=1)
+        logits_pair = pd.merge(k_average_logits, Label_data_pair[['mirna','lncrna']], left_on='pair_idx', right_index=True, how='left',sort=False)
+        logits_pair.to_csv(self.prepair_save_path / f'logits_of_prepair.csv')
+        print('predict on pair finished')
+
+    def predict_on_rna(self):
         predataloader = loaddata.dataloader(self.params)
-        target_rna, rna_info_o = predataloader.load_target_rna()
+        target_rna, rna_info_o = predataloader.load_rna_predict()
         target_ids = list(target_rna['rna_id'].values)
-            
         for rnaid in target_ids:
             rna_name = target_rna['rna'].values[target_rna['rna_id'].values == rnaid][0]
             print(f'predict on the RNA, id of {rnaid}, name of {rna_name}')
@@ -225,12 +281,12 @@ class Runner:
             k_average_logits = pd.DataFrame({'rna_id':ids_for_target})
 
             for k in range(self.params.KFold_num):
-                k_average_logits = self.pre_KFold(k=k, graph=self.graph_trainval, target=idx_target, for_target=idxs_for_target, mi2lnc=mi2lnc, k_average_logits=k_average_logits)    
+                k_average_logits = self.prerna_KFold(k=k, graph=self.graph_trainval, target=idx_target, for_target=idxs_for_target, mi2lnc=mi2lnc, k_average_logits=k_average_logits)    
             k_average_logits['logits'] = k_average_logits[[f'logits_{k}th_model' for k in range(self.params.KFold_num)]].mean(axis=1)
             k_average_logits.sort_values(by='logits', ascending=False, inplace=True)
             logits_rna = pd.merge(k_average_logits, rna_info_o, on='rna_id',how='left',sort=False)
 
-            trainval_pairs = pd.read_csv(self.prj_path / 'data' / 'processed_data' / 'pair_trainval' / 'run_info' / 'trainval_pairs_run.csv')[['mirna','lncrna','Label','mirna_id','lncrna_id','pair_index']]
+            trainval_pairs = pd.read_csv(self.prj_path / 'data' / 'processed_data' / 'pair_trainval' / 'run_info' / 'trainval_pairs_run.csv')[['mirna','lncrna','Label','mirna_id','lncrna_id','pair_id']]
             if rnaid > 0:
                 trainval = trainval_pairs[trainval_pairs['mirna_id'].isin(pd.Series(rnaid))]
                 logits_rna['confirmed'] = logits_rna['rna_id'].isin(trainval['lncrna_id'])
@@ -238,8 +294,9 @@ class Runner:
                 trainval = trainval_pairs[trainval_pairs['lncrna_id'].isin(pd.Series(rnaid))]
                 logits_rna['confirmed'] = logits_rna['rna_id'].isin(trainval['mirna_id'])
  
-            logits_rna.to_csv(self.predict_save_path / f'logits_of_{rna_name}.csv')
-  
+            logits_rna.to_csv(self.prerna_save_path / f'logits_of_{rna_name}.csv')
+        print('predict on rna finished')
+
     def evaluate(self, y_label, y_score):
         # ROC, AUC
         fprs, tprs, thresholds = metrics.roc_curve(y_label, y_score, pos_label=1)
@@ -278,16 +335,18 @@ if __name__ == '__main__':
     parser.add_argument("--n_layers", type=int, default=2, help="number of hidden NodeSAGE layers")
     parser.add_argument("--test_rate", type=float, default=0.1, help="rate for test RNAs spliting")
     parser.add_argument("--task_type", type=str, default='run', choices=['trainval', 'run'], help="task type, trainval mode or run mode")
-    parser.add_argument("--run_mode", type=str, default='test', choices=['test', 'predict'], help="run mode, test or predict")
+    parser.add_argument("--run_mode", type=str, default='predict_on_pair', choices=['test', 'predict_on_rna', 'predict_on_pair'], help="run mode, test,predict_on_rna or predict_on_pair")
     parser.add_argument("--feature_type", type=str, default='RNA_intrinsic')
     parser.add_argument("--batch_size", type=int, default=32, help="batch size")
     parser.add_argument("--KFold_num", type=int, default=5, help="number of folds for K-Fold Validation, default 5")
-    parser.add_argument("--KFold_val_type", type=str, default='pair', choices=['pair', 'mirna', 'lncrna'], help="KFold validation dataset spliting, pair, mirna or lncrna")      
+    parser.add_argument("--KFold_val_type", type=str, default='pair', help="KFold validation dataset spliting")      
     params = parser.parse_args()
     print(vars(params))
     runner = Runner(params)
     if params.run_mode == 'test':
         runner.test()
-    elif params.run_mode == 'predict':
-        runner.predict() 
+    elif params.run_mode == 'predict_on_rna':
+        runner.predict_on_rna() 
+    elif params.run_mode == 'predict_on_pair':
+        runner.predict_on_pair() 
 

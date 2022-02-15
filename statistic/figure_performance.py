@@ -7,8 +7,8 @@ import json
 
 prj_path = Path(__file__).parent.resolve().parent.resolve()
 datapath= prj_path / 'main'
-with open(prj_path / 'statistic' / 'color.json', 'r', encoding='utf-8') as f:
-    color = json.load(f)
+# with open(prj_path / 'statistic' / 'color.json', 'r', encoding='utf-8') as f:
+#     color = json.load(f)
 
 epochsize = 512
 hidden = 192
@@ -29,6 +29,7 @@ x_pair = np.arange(len(labels))
 y_pair = data_pair.mean().values[6:]
 
 std_pair = data_pair.std().values[6:]
+# print(std_pair)
 
 width = 0.8  # the width of the bars
 
