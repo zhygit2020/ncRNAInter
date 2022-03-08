@@ -1,7 +1,0 @@
-----------processing Fold 0----------
-22111 to train, 5528 to validation
-11056 positive and 11055 negative in train, 2764 positive and 2764 negative in val
-epoch trainval start
-prepare to train for epoch 0
-start to train
-  0%|          | 0/691 [00:00<?, ?it/s]  0%|          | 1/691 [00:05<59:55,  5.21s/it, edgeprediction[0]=0.332, edgelabel[0]=0.000, batch_loss=21.866]  0%|          | 2/691 [00:05<43:17,  3.77s/it, edgeprediction[0]=0.472, edgelabel[0]=0.000, batch_loss=22.047]  0%|          | 3/691 [00:06<31:50,  2.78s/it, edgeprediction[0]=0.546, edgelabel[0]=1.000, batch_loss=21.647]  1%|          | 4/691 [00:06<23:46,  2.08s/it, edgeprediction[0]=0.580, edgelabel[0]=1.000, batch_loss=21.973]  1%|          | 5/691 [00:06<18:02,  1.58s/it, edgeprediction[0]=0.508, edgelabel[0]=0.000, batch_loss=22.148]  1%|          | 6/691 [00:07<14:05,  1.23s/it, edgeprediction[0]=0.475, edgelabel[0]=0.000, batch_loss=21.638]  1%|          | 7/691 [00:07<11:12,  1.02it/s, edgeprediction[0]=0.420, edgelabel[0]=1.000, batch_loss=23.840]  1%|          | 8/691 [00:08<09:12,  1.24it/s, edgeprediction[0]=0.446, edgelabel[0]=0.000, batch_loss=19.468]  1%|¨‡         | 9/691 [00:08<07:59,  1.42it/s, edgeprediction[0]=0.430, edgelabel[0]=1.000, batch_loss=21.795]  1%|¨‡         | 10/691 [00:09<06:56,  1.64it/s, edgeprediction[0]=0.375, edgelabel[0]=0.000, batch_loss=21.124]
