@@ -87,7 +87,7 @@ python ./data_process/data_process.py --data_define user --negative_sampling Tru
 
 ##### 1.3 Generate the RNA feature representations by executing the following command:
 ```
-Algorithm for RNA feature representation will be updated later 
+Algorithm for RNA feature representation will be updated soon 
 ```
 ##### 1.4 Apply K-Fold training and validating on the processed data by executing the following command:
 ```
