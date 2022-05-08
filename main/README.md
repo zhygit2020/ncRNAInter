@@ -93,6 +93,6 @@ python ./run.py --lr 5e-4 --hidden_dim 192 --feature_type RNA_intrinsic --batch_
 
 - `--gpu`, set the GPU id the program would run on, while -1 for CPU.
 
-  __Output:__ the output  will be under the automatically generated `./run_result/prerna/` directory, the .csv file of `logits_of_prerna.csv` contains ranked logits of the spesific rna. 
+  __Output:__ the output  will be under the automatically generated `./run_result/prerna/` directory, the .csv files of `logits_of_{name of prerna}.csv` contains ranked logits of the spesific rnas. 
 ## Disclaimer
 ncRNAInter manuscript is under review, the information presented is for information purposes only. Should you have any questions, please contact Hanyu Zhang at hanyu_zhang@zju.edu.cn
