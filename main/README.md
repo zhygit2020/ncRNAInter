@@ -1,5 +1,5 @@
 # ncRNAInter Usage
-##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Honglin Li* and Feng Zhu*
+##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Bing Zhang, Zhanrong Li, Honglin Li* and Feng Zhu*
 ## Dependencies
 - ncRNAInter should be deployed on Linux.
 - Dependencies can be installed using `pip install -r requirements.txt`.
