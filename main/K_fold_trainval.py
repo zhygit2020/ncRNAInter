@@ -150,7 +150,7 @@ class Trainer:
 
     def split_KFold(self, split_type):
         if split_type == 'pair':
-            print(f"Apply Stratified {self.params.KFold_num}-Fold validation based on pair")
+            print(f"Apply Stratified {self.params.KFold_num}-Fold cross-validation based on pair")
             skf = StratifiedKFold(n_splits=self.params.KFold_num)
             list = []
             X = self.Label_data.index.values
