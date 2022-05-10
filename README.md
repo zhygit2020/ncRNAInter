@@ -1,7 +1,7 @@
 # ncRNAInter
 [![python 3.8](https://img.shields.io/badge/python-3.8-brightgreen)](https://www.python.org/)
 ### ncRNAInter: A Novel Strategy Based on Graph Neural Network to Discover Interactions between lncRNA and miRNA
-##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Honglin Li* and Feng Zhu*
+##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Bing Zhang, Zhanrong Li, Honglin Li* and Feng Zhu*
 
 ## Install
 1. Download all pretrained models and source codes of ncRNAInter.
