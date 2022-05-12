@@ -4,7 +4,7 @@
 ##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Bing Zhang, Zhanrong Li, Honglin Li* and Feng Zhu*
 
 ## Install
-1. Download all pretrained models and source codes of ncRNAInter.
+1. Download pretrained models and source codes of ncRNAInter.
 2. ncRNAInter should be deployed on Linux.
 3. The ncRNAInter tree includes three package:
 ```
