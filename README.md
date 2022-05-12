@@ -16,6 +16,7 @@
      |- LMI-INGI
  |- main
      |- data
+     |- data_process
      |- models
      |- pretrained
      |- test_result
