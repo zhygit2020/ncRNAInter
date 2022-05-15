@@ -2,7 +2,7 @@
 ## In the manuscript, there are some mistakes in the data given in Table 2b. Please be informed of the correction below.
 | (b)      | ACC | MCC | PRE | REC | SPC | F1 | AUC |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| ncRNAInter  | 0.9435      | 0.8870      | 0.9402      | 0.9472      | 0.9397      | 0.9437      | 0.9856      |
+| **ncRNAInter**  | **0.9435**      | **0.8870**      | **0.9402**      | **0.9472**      | **0.9397**      | **0.9437**      | **0.9856**      |
 | PmliPred    | 0.9191      | 0.8511      | 0.9178      | 0.9228      | 0.9155      | 0.9193      | 0.9682      |
 
 # ncRNAInter
