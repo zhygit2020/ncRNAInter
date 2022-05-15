@@ -1,4 +1,4 @@
-## Errata
+## correct errors
 ### In the manuscript, there are some mistakes in the data given in Table 2b. Please be informed of the correction below.
 | (b)      | ACC | MCC | PRE | REC | SPC | F1 | AUC |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
