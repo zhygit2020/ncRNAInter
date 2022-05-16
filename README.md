@@ -1,5 +1,5 @@
 ## Correct Errors
-### In the manuscript submitted, there are some mistakes in the data given in Table 2b, as well as the related descriptions in section **3.3**. Please be informed of the correction below. We would update the corrections on revision.
+### In the manuscript submitted, there are some mistakes in the data given in Table 2b, as well as the related descriptions in section **3.3**. Please be informed of the correction below. We would update it on revision.
 | (b)      | ACC | MCC | PRE | REC | SPC | F1 | AUC |
 | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | **ncRNAInter**  | **0.9435**      | **0.8870**      | **0.9402**      | **0.9472**      | **0.9397**      | **0.9437**      | **0.9856**      |
