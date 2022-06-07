@@ -49,4 +49,4 @@ stdlabel = np.array(['±'+str(i) for i in stdlabel])
 ax.bar_label(rects1, labels=stdlabel, fmt='%.4f', padding=-40,size=6)
 
 
-plt.savefig(prj_path / 'statistic' / 'figure_pair.tif',dpi=600,format='tif')
+plt.savefig(prj_path / 'statistic' / 'figure_performance.tif',dpi=600,format='tif')
