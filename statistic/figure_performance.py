@@ -44,6 +44,9 @@ ax.set_xticks(x_pair, ['ACC','AUC','MCC','PRE','REC','SPC','F1'])
 ax.grid(False)
 
 ax.bar_label(rects1, fmt='%.4f', padding=-30,size=8)
+stdlabel = np.around(std_pair, 4)
+stdlabel = np.array(['±'+str(i) for i in stdlabel])
+ax.bar_label(rects1, labels=stdlabel, fmt='%.4f', padding=-40,size=6)
 
 
 plt.savefig(prj_path / 'statistic' / 'figure_pair.tif',dpi=600,format='tif')
