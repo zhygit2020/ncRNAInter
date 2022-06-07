@@ -10,8 +10,8 @@ import copy
 
 prj_path = Path(__file__).parent.resolve().parent.resolve()
 datapath= prj_path / 'main'
-with open(prj_path / 'statistic' / 'color.json', 'r', encoding='utf-8') as f:
-    color = json.load(f)
+# with open(prj_path / 'statistic' / 'color.json', 'r', encoding='utf-8') as f:
+#     color = json.load(f)
 
 epochsize = 512
 
@@ -69,6 +69,7 @@ for idx, value in enumerate(top):
 ax1.set_zlim(zlolims, zuplims)
 ax1.set_xlabel('learning rate')
 ax1.set_ylabel('hidden size')
+ax1.set_zlabel('acc')
 
 ax1.set_xticks(np.array(range(len(lr)))/key, lr)
 ax1.set_yticks(np.array(range(len(hidden)))/key, hidden)
