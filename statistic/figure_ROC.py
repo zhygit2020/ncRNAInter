@@ -24,7 +24,7 @@ for k in range(K):
     data_kth =  pd.read_csv(data_path / 'ROC_data' / f'{k}th_Fold' / f'val_ROC_for_{k}th_Fold.csv', index_col=0)
     x_k = data_kth['fprs'].values
     y_k = data_kth['tprs'].values
-    axs.plot(x_k, y_k, linewidth=1.0, linestyle='-', label=f'Fold_{k}, AUC={AUC[k]:.4f}')
+    axs.plot(x_k, y_k, linewidth=1.0, linestyle='-', label=f'Fold_{k+1}, AUC={AUC[k]:.4f}')
 
 axs.plot([0,1], [0,1], c = 'black', linewidth=1.0, linestyle='--')
 axs.set_xlim(0, 1)
