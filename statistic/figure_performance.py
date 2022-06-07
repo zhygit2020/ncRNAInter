@@ -28,7 +28,7 @@ labels = data_pair.columns[6:]
 x_pair = np.arange(len(labels))
 y_pair = data_pair.mean().values[6:]
 
-std_pair = data_pair.std().values[6:]
+std_pair = data_pair.std(ddof=0).values[6:]
 # print(std_pair)
 
 width = 0.8  # the width of the bars
