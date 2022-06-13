@@ -28,7 +28,7 @@ labels = data_pair.columns[6:]
 x_pair = np.arange(len(labels))
 y_pair = data_pair.mean().values[6:]
 
-std_pair = data_pair.std(ddof=0).values[6:]
+std_pair = data_pair.std().values[6:]
 # print(std_pair)
 
 width = 0.8  # the width of the bars
@@ -38,18 +38,12 @@ rects1 = ax.bar(x_pair, y_pair, width, align='center', color=(1,1,1), edgecolor=
 ax.errorbar(x_pair, y_pair, std_pair, fmt='none', capsize=10, color='black')
 # Add some text for labels, title and custom x-axis tick labels, etc.
 ax.set_ylim(0.8, 1, 0.05)
-
 ax.set_xticks(x_pair, ['ACC','AUC','MCC','PRE','REC','SPC','F1'])
 
 # ax.legend(loc=1)
 ax.grid(False)
 
-ax.bar_label(rects1, fmt='%.4f', padding=-40,size=8)
-ax.set_ylabel('value', size=12)
-# stdlabel = np.around(std_pair, 4)
-# stdlabel = np.array(['±'+str(i) for i in stdlabel])
-# ax.bar_label(rects1, labels=stdlabel, fmt='%.4f', padding=-20,size=6)
+ax.bar_label(rects1, fmt='%.4f', padding=-30,size=8)
 
-plt.gcf().subplots_adjust(left=0.14)
 
-plt.savefig(prj_path / 'statistic' / 'figure_performance.tif',dpi=600,format='tif')
+plt.savefig(prj_path / 'statistic' / 'figure_pair.tif',dpi=600,format='tif')

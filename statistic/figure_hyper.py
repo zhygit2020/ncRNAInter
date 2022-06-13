@@ -16,9 +16,9 @@ datapath= prj_path / 'main'
 epochsize = 512
 
 # lr = ['5e-05','0.0001','0.0005','0.001','0.005','0.01']
-# hidden = [16,64,128,192,256,512] #16的colorbar要重设
+# hidden = [16,64,128,192,256,512] #16的colorbar
 lr = ['5e-05','0.0001','0.0005','0.001','0.005']
-hidden = [64,128,192,256,512] #16的colorbar要重设
+hidden = [64,128,192,256,512] #16的colorbar
 # targeth = 192
 # targetlr = '0.0005'
 fea = 'RNA_intrinsic'
