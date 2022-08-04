@@ -1,0 +1,192 @@
+,importance,bits,group,subgroup
+KMATG: Transcript k-mer ATG content,0.011616867,KMATG: Transcript k-mer ATG content,Transcript-related,K-mer (k=3)
+DPRA4: Distribution of 1.00A,0.009785809,DPRA4: Distribution of 1.00A,Transcript-related,CTD descriptors
+KMGCA: Transcript k-mer GCA content,0.009569064,KMGCA: Transcript k-mer GCA content,Transcript-related,K-mer (k=3)
+KMTGA: Transcript k-mer TGA content,0.008838794,KMTGA: Transcript k-mer TGA content,Transcript-related,K-mer (k=3)
+KMCGT: Transcript k-mer CGT content,0.006711242,KMCGT: Transcript k-mer CGT content,Transcript-related,K-mer (k=3)
+DPRG4: Distribution of 1.00G,0.006250359,DPRG4: Distribution of 1.00G,Transcript-related,CTD descriptors
+KMTGC: Transcript k-mer TGC content,0.006072102,KMTGC: Transcript k-mer TGC content,Transcript-related,K-mer (k=3)
+TraTG: Transition between T and G,0.005970201,TraTG: Transition between T and G,Transcript-related,CTD descriptors
+KMGAC: Transcript k-mer GAC content,0.00577526,KMGAC: Transcript k-mer GAC content,Transcript-related,K-mer (k=3)
+KMGTC: Transcript k-mer GTC content,0.005617003,KMGTC: Transcript k-mer GTC content,Transcript-related,K-mer (k=3)
+KMCGA: Transcript k-mer CGA content,0.005350296,KMCGA: Transcript k-mer CGA content,Transcript-related,K-mer (k=3)
+C3UTR: Coverage of 3 untranslated region,0.005298777,C3UTR: Coverage of 3 untranslated region,Transcript-related,UTR related properties
+KMCTG: Transcript k-mer CTG content,0.005090334,KMCTG: Transcript k-mer CTG content,Transcript-related,K-mer (k=3)
+KMTTG: Transcript k-mer TTG content,0.004910067,KMTTG: Transcript k-mer TTG content,Transcript-related,K-mer (k=3)
+C5UTR: Coverage of 5 untranslated region,0.004743305,C5UTR: Coverage of 5 untranslated region,Transcript-related,UTR related properties
+KMTAG: Transcript k-mer TAG content,0.004686,KMTAG: Transcript k-mer TAG content,Transcript-related,K-mer (k=3)
+KMGAT: Transcript k-mer GAT content,0.004377978,KMGAT: Transcript k-mer GAT content,Transcript-related,K-mer (k=3)
+TraEC: Entropy density C on transcript,0.003832626,TraEC: Entropy density C on transcript,Transcript-related,EDP scores on transcript
+TraEP: Entropy density P on transcript,0.003679474,TraEP: Entropy density P on transcript,Transcript-related,EDP scores on transcript
+TraEM: Entropy density M on transcript,0.003497752,TraEM: Entropy density M on transcript,Transcript-related,EDP scores on transcript
+TraEW: Entropy density W on transcript,0.003352104,TraEW: Entropy density W on transcript,Transcript-related,EDP scores on transcript
+ORFIn: ORF integrity,0.003221638,ORFIn: ORF integrity,ORF-related,Basic ORF properties
+KMTGG: Transcript k-mer TGG content,0.003156346,KMTGG: Transcript k-mer TGG content,Transcript-related,K-mer (k=3)
+EucDist.Ratio,0.003105662,EucDist.Ratio,Transcript-related,Hexamer scores on transcript
+TraEV: Entropy density V on transcript,0.003032129,TraEV: Entropy density V on transcript,Transcript-related,EDP scores on transcript
+KMCTA: Transcript k-mer CTA content,0.002926103,KMCTA: Transcript k-mer CTA content,Transcript-related,K-mer (k=3)
+KMCAA: Transcript k-mer CAA content,0.002915645,KMCAA: Transcript k-mer CAA content,Transcript-related,K-mer (k=3)
+ORFEV: Entropy density V on ORF,0.00280729,ORFEV: Entropy density V on ORF,ORF-related,EDP scores on ORF
+KMGTT: Transcript k-mer GTT content,0.002711849,KMGTT: Transcript k-mer GTT content,Transcript-related,K-mer (k=3)
+ORFEP: Entropy density P on ORF,0.002682225,ORFEP: Entropy density P on ORF,ORF-related,EDP scores on ORF
+ComRA: Composition of A,0.00260659,ComRA: Composition of A,Transcript-related,CTD descriptors
+KMCCC: Transcript k-mer CCC content,0.002554767,KMCCC: Transcript k-mer CCC content,Transcript-related,K-mer (k=3)
+KMGGG: Transcript k-mer GGG content,0.002547839,KMGGG: Transcript k-mer GGG content,Transcript-related,K-mer (k=3)
+KMCCT: Transcript k-mer CCT content,0.002543779,KMCCT: Transcript k-mer CCT content,Transcript-related,K-mer (k=3)
+TraAC: Transition between A and C,0.002511193,TraAC: Transition between A and C,Transcript-related,CTD descriptors
+TraED: Entropy density D on transcript,0.00246265,TraED: Entropy density D on transcript,Transcript-related,EDP scores on transcript
+TraEA: Entropy density A on transcript,0.002431646,TraEA: Entropy density A on transcript,Transcript-related,EDP scores on transcript
+TraAT: Transition between A and T,0.002430785,TraAT: Transition between A and T,Transcript-related,CTD descriptors
+ORFEQ: Entropy density Q on ORF,0.002371218,ORFEQ: Entropy density Q on ORF,ORF-related,EDP scores on ORF
+SLDRN: Structural logarithm distance acguACGU ratio,0.002303161,SLDRN: Structural logarithm distance acguACGU ratio,Secondary-structure,Multi-scale secondary scores
+SFPUS: Secondary structural UP frequency paired-unpaired,0.002285445,SFPUS: Secondary structural UP frequency paired-unpaired,Secondary-structure,Secondary structure descriptors
+KMTCC: Transcript k-mer TCC content,0.002266773,KMTCC: Transcript k-mer TCC content,Transcript-related,K-mer (k=3)
+ORFEK: Entropy density K on ORF,0.00223693,ORFEK: Entropy density K on ORF,ORF-related,EDP scores on ORF
+KMAGC: Transcript k-mer AGC content,0.002221799,KMAGC: Transcript k-mer AGC content,Transcript-related,K-mer (k=3)
+KMTTA: Transcript k-mer TTA content,0.002185576,KMTTA: Transcript k-mer TTA content,Transcript-related,K-mer (k=3)
+KMTTT: Transcript k-mer TTT content,0.002161166,KMTTT: Transcript k-mer TTT content,Transcript-related,K-mer (k=3)
+TraET: Entropy density T on transcript,0.002150054,TraET: Entropy density T on transcript,Transcript-related,EDP scores on transcript
+EucDist.Ratio_orf,0.002054875,EucDist.Ratio_orf,ORF-related,Hexamer scores on ORF
+TraEF: Entropy density F on transcript,0.002051582,TraEF: Entropy density F on transcript,Transcript-related,EDP scores on transcript
+EucDist.LNC,0.002036974,EucDist.LNC,Transcript-related,Hexamer scores on transcript
+KMAGG: Transcript k-mer AGG content,0.00197658,KMAGG: Transcript k-mer AGG content,Transcript-related,K-mer (k=3)
+KMAAT: Transcript k-mer AAT content,0.001907552,KMAAT: Transcript k-mer AAT content,Transcript-related,K-mer (k=3)
+ORFEH: Entropy density H on ORF,0.001865411,ORFEH: Entropy density H on ORF,ORF-related,EDP scores on ORF
+KMATT: Transcript k-mer ATT content,0.001807159,KMATT: Transcript k-mer ATT content,Transcript-related,K-mer (k=3)
+ORFEI: Entropy density I on ORF,0.00175956,ORFEI: Entropy density I on ORF,ORF-related,EDP scores on ORF
+ORFCo: ORF coverage,0.001715072,ORFCo: ORF coverage,ORF-related,Basic ORF properties
+KMTAA: Transcript k-mer TAA content,0.001712938,KMTAA: Transcript k-mer TAA content,Transcript-related,K-mer (k=3)
+KMGCC: Transcript k-mer GCC content,0.001689882,KMGCC: Transcript k-mer GCC content,Transcript-related,K-mer (k=3)
+ORFET: Entropy density T on ORF,0.001689179,ORFET: Entropy density T on ORF,ORF-related,EDP scores on ORF
+KMACT: Transcript k-mer ACT content,0.001678976,KMACT: Transcript k-mer ACT content,Transcript-related,K-mer (k=3)
+GCCo2: GC content of 2nd position of codons,0.001675543,GCCo2: GC content of 2nd position of codons,GC-related,GC content properties
+KMAGT: Transcript k-mer AGT content,0.001642668,KMAGT: Transcript k-mer AGT content,Transcript-related,K-mer (k=3)
+KMTTC: Transcript k-mer TTC content,0.001639311,KMTTC: Transcript k-mer TTC content,Transcript-related,K-mer (k=3)
+TraER: Entropy density R on transcript,0.001606426,TraER: Entropy density R on transcript,Transcript-related,EDP scores on transcript
+ORFEL: Entropy density L on ORF,0.001585519,ORFEL: Entropy density L on ORF,ORF-related,EDP scores on ORF
+KMACC: Transcript k-mer ACC content,0.001534967,KMACC: Transcript k-mer ACC content,Transcript-related,K-mer (k=3)
+KMAAG: Transcript k-mer AAG content,0.001531834,KMAAG: Transcript k-mer AAG content,Transcript-related,K-mer (k=3)
+DPRC2: Distribution of 0.50C,0.001486286,DPRC2: Distribution of 0.50C,Transcript-related,CTD descriptors
+KMCAG: Transcript k-mer CAG content,0.00147498,KMCAG: Transcript k-mer CAG content,Transcript-related,K-mer (k=3)
+ProPI: Pseudo protein isoelectric point,0.001471315,ProPI: Pseudo protein isoelectric point,Physicochemical-property,Pseudo-protein properties
+KMCTT: Transcript k-mer CTT content,0.001443015,KMCTT: Transcript k-mer CTT content,Transcript-related,K-mer (k=3)
+TraEL: Entropy density L on transcript,0.001426428,TraEL: Entropy density L on transcript,Transcript-related,EDP scores on transcript
+LogDist.PCT_orf,0.001359079,LogDist.PCT_orf,ORF-related,Hexamer scores on ORF
+KMGTG: Transcript k-mer GTG content,0.001351478,KMGTG: Transcript k-mer GTG content,Transcript-related,K-mer (k=3)
+GCCo1: GC content of 1st position of codons,0.001333472,GCCo1: GC content of 1st position of codons,GC-related,GC content properties
+TraEK: Entropy density K on transcript,0.001324096,TraEK: Entropy density K on transcript,Transcript-related,EDP scores on transcript
+EucDist.PCT,0.001313356,EucDist.PCT,Transcript-related,Hexamer scores on transcript
+GCCoW: GC content of whole sequence,0.001298904,GCCoW: GC content of whole sequence,GC-related,GC content properties
+TraEN: Entropy density N on transcript,0.001289562,TraEN: Entropy density N on transcript,Transcript-related,EDP scores on transcript
+KMCTC: Transcript k-mer CTC content,0.001262077,KMCTC: Transcript k-mer CTC content,Transcript-related,K-mer (k=3)
+TraEE: Entropy density E on transcript,0.001248465,TraEE: Entropy density E on transcript,Transcript-related,EDP scores on transcript
+ORFEY: Entropy density Y on ORF,0.001243931,ORFEY: Entropy density Y on ORF,ORF-related,EDP scores on ORF
+KMGGT: Transcript k-mer GGT content,0.001193524,KMGGT: Transcript k-mer GGT content,Transcript-related,K-mer (k=3)
+KMTGT: Transcript k-mer TGT content,0.001183688,KMTGT: Transcript k-mer TGT content,Transcript-related,K-mer (k=3)
+KMGGC: Transcript k-mer GGC content,0.001179753,KMGGC: Transcript k-mer GGC content,Transcript-related,K-mer (k=3)
+ProII: Pseudo protein instability index,0.001160579,ProII: Pseudo protein instability index,Physicochemical-property,Pseudo-protein properties
+ORFEA: Entropy density A on ORF,0.001155579,ORFEA: Entropy density A on ORF,ORF-related,EDP scores on ORF
+TraTC: Transition between T and C,0.001140096,TraTC: Transition between T and C,Transcript-related,CTD descriptors
+KMCAT: Transcript k-mer CAT content,0.00113775,KMCAT: Transcript k-mer CAT content,Transcript-related,K-mer (k=3)
+DPRC1: Distribution of 0.25C,0.001109951,DPRC1: Distribution of 0.25C,Transcript-related,CTD descriptors
+KMGTA: Transcript k-mer GTA content,0.001108653,KMGTA: Transcript k-mer GTA content,Transcript-related,K-mer (k=3)
+DPRT4: Distribution of 1.00T,0.001071279,DPRT4: Distribution of 1.00T,Transcript-related,CTD descriptors
+TraAG: Transition between A and G,0.001049786,TraAG: Transition between A and G,Transcript-related,CTD descriptors
+ComRT: Composition of T,0.001015304,ComRT: Composition of T,Transcript-related,CTD descriptors
+ORFEC: Entropy density C on ORF,0.000939267,ORFEC: Entropy density C on ORF,ORF-related,EDP scores on ORF
+KMCCA: Transcript k-mer CCA content,0.000930731,KMCCA: Transcript k-mer CCA content,Transcript-related,K-mer (k=3)
+LogDist.PCT,0.000919038,LogDist.PCT,Transcript-related,Hexamer scores on transcript
+KMGCT: Transcript k-mer GCT content,0.000903313,KMGCT: Transcript k-mer GCT content,Transcript-related,K-mer (k=3)
+ComRG: Composition of G,0.000884228,ComRG: Composition of G,Transcript-related,CTD descriptors
+L3UTR: Length of 3 untranslated region,0.000870644,L3UTR: Length of 3 untranslated region,Transcript-related,UTR related properties
+DPRC3: Distribution of 0.75C,0.000746014,DPRC3: Distribution of 0.75C,Transcript-related,CTD descriptors
+ORFEE: Entropy density E on ORF,0.000733576,ORFEE: Entropy density E on ORF,ORF-related,EDP scores on ORF
+TraEG: Entropy density G on transcript,0.000694648,TraEG: Entropy density G on transcript,Transcript-related,EDP scores on transcript
+KMATA: Transcript k-mer ATA content,0.000687512,KMATA: Transcript k-mer ATA content,Transcript-related,K-mer (k=3)
+ORFEN: Entropy density N on ORF,0.000686,ORFEN: Entropy density N on ORF,ORF-related,EDP scores on ORF
+ORFES: Entropy density S on ORF,0.000668513,ORFES: Entropy density S on ORF,ORF-related,EDP scores on ORF
+ComRC: Composition of C,0.000612418,ComRC: Composition of C,Transcript-related,CTD descriptors
+DPRG2: Distribution of 0.50G,0.000587822,DPRG2: Distribution of 0.50G,Transcript-related,CTD descriptors
+DPRT0: Distribution of 0.00T,0.000540987,DPRT0: Distribution of 0.00T,Transcript-related,CTD descriptors
+KMGAG: Transcript k-mer GAG content,0.000522153,KMGAG: Transcript k-mer GAG content,Transcript-related,K-mer (k=3)
+EipSP: Electron-ion interaction pseudopotential signal peak,0.000467587,EipSP: Electron-ion interaction pseudopotential signal peak,Physicochemical-property,EIIP spectrum scores
+LogDist.Ratio,0.000457676,LogDist.Ratio,Transcript-related,Hexamer scores on transcript
+EucDist.LNC_orf,0.000436107,EucDist.LNC_orf,ORF-related,Hexamer scores on ORF
+EucDist.PCT_orf,0.000427511,EucDist.PCT_orf,ORF-related,Hexamer scores on ORF
+KMAAA: Transcript k-mer AAA content,0.000413532,KMAAA: Transcript k-mer AAA content,Transcript-related,K-mer (k=3)
+ProAH: Pseudo protein average hydropathy,0.000405019,ProAH: Pseudo protein average hydropathy,Physicochemical-property,Pseudo-protein properties
+SCFre: Stop codon frequency,0.00039729,SCFre: Stop codon frequency,Codon related,Stop codon related properties
+SCCou: Stop codon count,0.00039352,SCCou: Stop codon count,Codon related,Stop codon related properties
+LogDist.LNC,0.000377549,LogDist.LNC,Transcript-related,Hexamer scores on transcript
+KMAGA: Transcript k-mer AGA content,0.000357285,KMAGA: Transcript k-mer AGA content,Transcript-related,K-mer (k=3)
+LogDist.LNC_orf,0.000356628,LogDist.LNC_orf,ORF-related,Hexamer scores on ORF
+SCCFS: Stop codon count frame score,0.000343827,SCCFS: Stop codon count frame score,Codon related,Stop codon related properties
+SLDRD: Structural logarithm distance acguD ratio,0.000327732,SLDRD: Structural logarithm distance acguD ratio,Secondary-structure,Multi-scale secondary scores
+SLDLD: Structural logarithm distance to lncRNA of acguD,0.00031568,SLDLD: Structural logarithm distance to lncRNA of acguD,Secondary-structure,Multi-scale secondary scores
+EiPS3: Electron-ion interaction pseudopotential spectrum 0.75,0.000307878,EiPS3: Electron-ion interaction pseudopotential spectrum 0.75,Physicochemical-property,EIIP spectrum scores
+ORFEW: Entropy density W on ORF,0.000296935,ORFEW: Entropy density W on ORF,ORF-related,EDP scores on ORF
+KMCCG: Transcript k-mer CCG content,0.000290065,KMCCG: Transcript k-mer CCG content,Transcript-related,K-mer (k=3)
+EiPS2: Electron-ion interaction pseudopotential spectrum 0.5,0.00027029,EiPS2: Electron-ion interaction pseudopotential spectrum 0.5,Physicochemical-property,EIIP spectrum scores
+SLDPN: Structural logarithm distance to pcRNA of acguACGU,0.000262437,SLDPN: Structural logarithm distance to pcRNA of acguACGU,Secondary-structure,Multi-scale secondary scores
+EiPS0: Electron-ion interaction pseudopotential spectrum 0,0.000262269,EiPS0: Electron-ion interaction pseudopotential spectrum 0,Physicochemical-property,EIIP spectrum scores
+KMTAC: Transcript k-mer TAC content,0.000249017,KMTAC: Transcript k-mer TAC content,Transcript-related,K-mer (k=3)
+KMACA: Transcript k-mer ACA content,0.000247082,KMACA: Transcript k-mer ACA content,Transcript-related,K-mer (k=3)
+SCFFS: Stop codon frequency frame score,0.000245036,SCFFS: Stop codon frequency frame score,Codon related,Stop codon related properties
+EiPS1: Electron-ion interaction pseudopotential spectrum 0.25,0.000224233,EiPS1: Electron-ion interaction pseudopotential spectrum 0.25,Physicochemical-property,EIIP spectrum scores
+EiSNR: Electron-ion interaction pseudopotential signal/noise ratio,0.000219004,EiSNR: Electron-ion interaction pseudopotential signal/noise ratio,Physicochemical-property,EIIP spectrum scores
+EiPS4: Electron-ion interaction pseudopotential spectrum 1,0.000201387,EiPS4: Electron-ion interaction pseudopotential spectrum 1,Physicochemical-property,EIIP spectrum scores
+KMAAC: Transcript k-mer AAC content,0.000199795,KMAAC: Transcript k-mer AAC content,Transcript-related,K-mer (k=3)
+LogDist.Ratio_orf,0.000188405,LogDist.Ratio_orf,ORF-related,Hexamer scores on ORF
+DPRT3: Distribution of 0.75T,0.000186821,DPRT3: Distribution of 0.75T,Transcript-related,CTD descriptors
+TrLen: Transcript length,0.000141614,TrLen: Transcript length,Transcript-related,Basic transcript property
+EipAP: Electron-ion interaction pseudopotential average power,0.000140374,EipAP: Electron-ion interaction pseudopotential average power,Physicochemical-property,EIIP spectrum scores
+TraEH: Entropy density H on transcript,8.89e-05,TraEH: Entropy density H on transcript,Transcript-related,EDP scores on transcript
+KMTCT: Transcript k-mer TCT content,8.33e-05,KMTCT: Transcript k-mer TCT content,Transcript-related,K-mer (k=3)
+KMGAA: Transcript k-mer GAA content,6.84e-05,KMGAA: Transcript k-mer GAA content,Transcript-related,K-mer (k=3)
+KMGGA: Transcript k-mer GGA content,6.77e-05,KMGGA: Transcript k-mer GGA content,Transcript-related,K-mer (k=3)
+KMCAC: Transcript k-mer CAC content,6.49e-05,KMCAC: Transcript k-mer CAC content,Transcript-related,K-mer (k=3)
+DPRT2: Distribution of 0.50T,5.35e-05,DPRT2: Distribution of 0.50T,Transcript-related,CTD descriptors
+DPRC0: Distribution of 0.00C,3.51e-05,DPRC0: Distribution of 0.00C,Transcript-related,CTD descriptors
+SLDPD: Structural logarithm distance to pcRNA of acguD,3.1e-05,SLDPD: Structural logarithm distance to pcRNA of acguD,Secondary-structure,Multi-scale secondary scores
+Hexamer.Score_orf,0.0,Hexamer.Score_orf,ORF-related,Hexamer scores on ORF
+TraHS: Hexamer score on transcript,0.0,TraHS: Hexamer score on transcript,Transcript-related,Hexamer scores on transcript
+ORFFS: ORF frame score,-2.09e-06,ORFFS: ORF frame score,ORF-related,Basic ORF properties
+KMACG: Transcript k-mer ACG content,-2.01e-05,KMACG: Transcript k-mer ACG content,Transcript-related,K-mer (k=3)
+KMTCG: Transcript k-mer TCG content,-2.69e-05,KMTCG: Transcript k-mer TCG content,Transcript-related,K-mer (k=3)
+SLDLN: Structural logarithm distance to lncRNA of acguACGU,-2.69e-05,SLDLN: Structural logarithm distance to lncRNA of acguACGU,Secondary-structure,Multi-scale secondary scores
+L5UTR: Length of 5 untranslated region,-3.84e-05,L5UTR: Length of 5 untranslated region,Transcript-related,UTR related properties
+ORFED: Entropy density D on ORF,-6.79e-05,ORFED: Entropy density D on ORF,ORF-related,EDP scores on ORF
+PPMFS: Pseudo protein PI-MW frame score,-8.98e-05,PPMFS: Pseudo protein PI-MW frame score,Physicochemical-property,Pseudo-protein properties
+LORFL: Longest ORF length,-0.000112819,LORFL: Longest ORF length,ORF-related,Basic ORF properties
+KMCGG: Transcript k-mer CGG content,-0.000138751,KMCGG: Transcript k-mer CGG content,Transcript-related,K-mer (k=3)
+TraEQ: Entropy density Q on transcript,-0.000177592,TraEQ: Entropy density Q on transcript,Transcript-related,EDP scores on transcript
+ProMW: Pseudo protein molecular weight,-0.00019542,ProMW: Pseudo protein molecular weight,Physicochemical-property,Pseudo-protein properties
+TraEI: Entropy density I on transcript,-0.000216934,TraEI: Entropy density I on transcript,Transcript-related,EDP scores on transcript
+DPRG0: Distribution of 0.00G,-0.000228164,DPRG0: Distribution of 0.00G,Transcript-related,CTD descriptors
+FickS: Fickett score,-0.000247588,FickS: Fickett score,Codon related,Fickett score
+ORFEM: Entropy density M on ORF,-0.000276464,ORFEM: Entropy density M on ORF,ORF-related,EDP scores on ORF
+DPRA0: Distribution of 0.00A,-0.000278334,DPRA0: Distribution of 0.00A,Transcript-related,CTD descriptors
+KMTCA: Transcript k-mer TCA content,-0.000313522,KMTCA: Transcript k-mer TCA content,Transcript-related,K-mer (k=3)
+DPRA3: Distribution of 0.75A,-0.000315339,DPRA3: Distribution of 0.75A,Transcript-related,CTD descriptors
+DPRT1: Distribution of 0.25T,-0.000338928,DPRT1: Distribution of 0.25T,Transcript-related,CTD descriptors
+TraGC: Transition between G and C,-0.000352396,TraGC: Transition between G and C,Transcript-related,CTD descriptors
+ORFEF: Entropy density F on ORF,-0.000438984,ORFEF: Entropy density F on ORF,ORF-related,EDP scores on ORF
+GCC3V: GCCo3 variance frame score,-0.000479821,GCC3V: GCCo3 variance frame score,GC-related,GC content properties
+nMFE,-0.000497007,nMFE,Secondary-structure,Secondary structure descriptors
+DPRG1: Distribution of 0.25G,-0.000540464,DPRG1: Distribution of 0.25G,Transcript-related,CTD descriptors
+DPRA1: Distribution of 0.25A,-0.000571831,DPRA1: Distribution of 0.25A,Transcript-related,CTD descriptors
+KMGCG: Transcript k-mer GCG content,-0.000574826,KMGCG: Transcript k-mer GCG content,Transcript-related,K-mer (k=3)
+GCC1V: GCCo1 variance frame score,-0.000641118,GCC1V: GCCo1 variance frame score,GC-related,GC content properties
+GCC2V: GCCo2 variance frame score,-0.000644274,GCC2V: GCCo2 variance frame score,GC-related,GC content properties
+TraEY: Entropy density Y on transcript,-0.000732429,TraEY: Entropy density Y on transcript,Transcript-related,EDP scores on transcript
+ORFEG: Entropy density G on ORF,-0.00075169,ORFEG: Entropy density G on ORF,ORF-related,EDP scores on ORF
+ORFER: Entropy density R on ORF,-0.000826582,ORFER: Entropy density R on ORF,ORF-related,EDP scores on ORF
+KMCGC: Transcript k-mer CGC content,-0.00092551,KMCGC: Transcript k-mer CGC content,Transcript-related,K-mer (k=3)
+GCCo3: GC content of 3rd position of codons,-0.001035274,GCCo3: GC content of 3rd position of codons,GC-related,GC content properties
+DPRA2: Distribution of 0.50A,-0.001048005,DPRA2: Distribution of 0.50A,Transcript-related,CTD descriptors
+TraES: Entropy density S on transcript,-0.001090615,TraES: Entropy density S on transcript,Transcript-related,EDP scores on transcript
+KMTAT: Transcript k-mer TAT content,-0.001098667,KMTAT: Transcript k-mer TAT content,Transcript-related,K-mer (k=3)
+DPRG3: Distribution of 0.75G,-0.001337153,DPRG3: Distribution of 0.75G,Transcript-related,CTD descriptors
+KMATC: Transcript k-mer ATC content,-0.001737744,KMATC: Transcript k-mer ATC content,Transcript-related,K-mer (k=3)
+DPRC4: Distribution of 1.00C,-0.001819139,DPRC4: Distribution of 1.00C,Transcript-related,CTD descriptors
+SDMFE: Secondary structural minimum free energy,-0.001888464,SDMFE: Secondary structural minimum free energy,Secondary-structure,Secondary structure descriptors

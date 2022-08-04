@@ -1,0 +1,383 @@
+,importance
+mirna_FickS: Fickett score,0.003440688
+mirna_SCCou: Stop codon count,0.001424986
+mirna_SCFre: Stop codon frequency,0.001014184
+mirna_SCCFS: Stop codon count frame score,0.000340164
+mirna_SCFFS: Stop codon frequency frame score,0.000205065
+mirna_LORFL: Longest ORF length,0.000608492
+mirna_ORFCo: ORF coverage,7.47E-05
+mirna_ORFIn: ORF integrity,0.00154538
+mirna_ORFFS: ORF frame score,0.000104941
+mirna_ORFEA: Entropy density A on ORF,-0.000152858
+mirna_ORFEC: Entropy density C on ORF,0.000248324
+mirna_ORFED: Entropy density D on ORF,7.67E-05
+mirna_ORFEE: Entropy density E on ORF,-8.34E-05
+mirna_ORFEF: Entropy density F on ORF,0.000152252
+mirna_ORFEG: Entropy density G on ORF,6.25E-05
+mirna_ORFEH: Entropy density H on ORF,7.99E-05
+mirna_ORFEI: Entropy density I on ORF,-3.21E-05
+mirna_ORFEK: Entropy density K on ORF,0.000153861
+mirna_ORFEL: Entropy density L on ORF,0.000105598
+mirna_ORFEM: Entropy density M on ORF,0.001163135
+mirna_ORFEN: Entropy density N on ORF,4.25E-05
+mirna_ORFEP: Entropy density P on ORF,3.90E-05
+mirna_ORFEQ: Entropy density Q on ORF,7.60E-05
+mirna_ORFER: Entropy density R on ORF,6.30E-05
+mirna_ORFES: Entropy density S on ORF,2.27E-05
+mirna_ORFET: Entropy density T on ORF,1.40E-05
+mirna_ORFEV: Entropy density V on ORF,-0.000188711
+mirna_ORFEW: Entropy density W on ORF,-4.56E-05
+mirna_ORFEY: Entropy density Y on ORF,5.17E-05
+mirna_EucDist.LNC_orf,0.00130547
+mirna_EucDist.PCT_orf,0.001194593
+mirna_EucDist.Ratio_orf,0.000913196
+mirna_LogDist.LNC_orf,-0.000711165
+mirna_LogDist.PCT_orf,-0.001472571
+mirna_LogDist.Ratio_orf,0.001130945
+mirna_Hexamer.Score_orf,0
+mirna_GCCoW: GC content of whole sequence,0.001201104
+mirna_GCCo1: GC content of 1st position of codons,0.001796261
+mirna_GCCo2: GC content of 2nd position of codons,0.004289416
+mirna_GCCo3: GC content of 3rd position of codons,0.001924526
+mirna_GCC1V: GCCo1 variance frame score,0.001823347
+mirna_GCC2V: GCCo2 variance frame score,0.002797674
+mirna_GCC3V: GCCo3 variance frame score,0.002724109
+mirna_TraHS: Hexamer score on transcript,0
+mirna_TrLen: Transcript length,0.003902605
+mirna_L5UTR: Length of 5 untranslated region,0.003221341
+mirna_L3UTR: Length of 3 untranslated region,0.000110557
+mirna_C5UTR: Coverage of 5 untranslated region,0.001044333
+mirna_C3UTR: Coverage of 3 untranslated region,2.96E-05
+mirna_TraEA: Entropy density A on transcript,0.001937026
+mirna_TraEC: Entropy density C on transcript,0.002658479
+mirna_TraED: Entropy density D on transcript,0.000816388
+mirna_TraEE: Entropy density E on transcript,0.001330736
+mirna_TraEF: Entropy density F on transcript,0.00047144
+mirna_TraEG: Entropy density G on transcript,0.001607311
+mirna_TraEH: Entropy density H on transcript,0.001161044
+mirna_TraEI: Entropy density I on transcript,0.005724172
+mirna_TraEK: Entropy density K on transcript,-0.000527346
+mirna_TraEL: Entropy density L on transcript,0.005880422
+mirna_TraEM: Entropy density M on transcript,8.16E-06
+mirna_TraEN: Entropy density N on transcript,0.001293269
+mirna_TraEP: Entropy density P on transcript,0.001102017
+mirna_TraEQ: Entropy density Q on transcript,0.000689016
+mirna_TraER: Entropy density R on transcript,-9.85E-05
+mirna_TraES: Entropy density S on transcript,0.002380368
+mirna_TraET: Entropy density T on transcript,0.002222965
+mirna_TraEV: Entropy density V on transcript,0.001073575
+mirna_TraEW: Entropy density W on transcript,0.001956583
+mirna_TraEY: Entropy density Y on transcript,-0.000337737
+mirna_ComRA: Composition of A,-0.002161944
+mirna_ComRT: Composition of T,0.005084645
+mirna_ComRG: Composition of G,0.000236343
+mirna_ComRC: Composition of C,0.002015977
+mirna_TraAT: Transition between A and T,0.000292409
+mirna_TraAG: Transition between A and G,-0.00098992
+mirna_TraAC: Transition between A and C,0.000383595
+mirna_TraTG: Transition between T and G,0.002252673
+mirna_TraTC: Transition between T and C,0.003351447
+mirna_TraGC: Transition between G and C,0.002868957
+mirna_DPRA0: Distribution of 0.00A,0.001307848
+mirna_DPRA1: Distribution of 0.25A,8.19E-06
+mirna_DPRA2: Distribution of 0.50A,-0.000756409
+mirna_DPRA3: Distribution of 0.75A,-0.000370089
+mirna_DPRA4: Distribution of 1.00A,0.002218863
+mirna_DPRT0: Distribution of 0.00T,0.001694917
+mirna_DPRT1: Distribution of 0.25T,0.003108724
+mirna_DPRT2: Distribution of 0.50T,0.003828567
+mirna_DPRT3: Distribution of 0.75T,0.002272224
+mirna_DPRT4: Distribution of 1.00T,0.00340487
+mirna_DPRG0: Distribution of 0.00G,0.000883632
+mirna_DPRG1: Distribution of 0.25G,0.002665526
+mirna_DPRG2: Distribution of 0.50G,0.002351854
+mirna_DPRG3: Distribution of 0.75G,0.001097552
+mirna_DPRG4: Distribution of 1.00G,-0.001931826
+mirna_DPRC0: Distribution of 0.00C,0.002397701
+mirna_DPRC1: Distribution of 0.25C,0.001350935
+mirna_DPRC2: Distribution of 0.50C,0.001532366
+mirna_DPRC3: Distribution of 0.75C,0.004493841
+mirna_DPRC4: Distribution of 1.00C,0.004331666
+mirna_KMAAA: Transcript k-mer AAA content,-0.000514291
+mirna_KMAAG: Transcript k-mer AAG content,0.000695076
+mirna_KMAAT: Transcript k-mer AAT content,0.001028485
+mirna_KMAAC: Transcript k-mer AAC content,-0.000392003
+mirna_KMAGA: Transcript k-mer AGA content,-0.000204795
+mirna_KMAGG: Transcript k-mer AGG content,-0.000149356
+mirna_KMAGT: Transcript k-mer AGT content,0.001595069
+mirna_KMAGC: Transcript k-mer AGC content,0.000554002
+mirna_KMATA: Transcript k-mer ATA content,-0.000462014
+mirna_KMATG: Transcript k-mer ATG content,0.000968279
+mirna_KMATT: Transcript k-mer ATT content,0.002361184
+mirna_KMATC: Transcript k-mer ATC content,0.001553403
+mirna_KMACA: Transcript k-mer ACA content,-0.000273793
+mirna_KMACG: Transcript k-mer ACG content,0.000404712
+mirna_KMACT: Transcript k-mer ACT content,7.20E-05
+mirna_KMACC: Transcript k-mer ACC content,7.23E-06
+mirna_KMGAA: Transcript k-mer GAA content,0.000371941
+mirna_KMGAG: Transcript k-mer GAG content,-0.000382249
+mirna_KMGAT: Transcript k-mer GAT content,0.001070182
+mirna_KMGAC: Transcript k-mer GAC content,2.69E-05
+mirna_KMGGA: Transcript k-mer GGA content,-0.00063788
+mirna_KMGGG: Transcript k-mer GGG content,0.000270152
+mirna_KMGGT: Transcript k-mer GGT content,0.000149095
+mirna_KMGGC: Transcript k-mer GGC content,0.000586677
+mirna_KMGTA: Transcript k-mer GTA content,0.000962052
+mirna_KMGTG: Transcript k-mer GTG content,0.005413175
+mirna_KMGTT: Transcript k-mer GTT content,-0.000384445
+mirna_KMGTC: Transcript k-mer GTC content,0.000881871
+mirna_KMGCA: Transcript k-mer GCA content,-2.73E-05
+mirna_KMGCG: Transcript k-mer GCG content,0.000542168
+mirna_KMGCT: Transcript k-mer GCT content,0.000467675
+mirna_KMGCC: Transcript k-mer GCC content,0.000766753
+mirna_KMTAA: Transcript k-mer TAA content,0.001076205
+mirna_KMTAG: Transcript k-mer TAG content,0.000972257
+mirna_KMTAT: Transcript k-mer TAT content,-3.96E-05
+mirna_KMTAC: Transcript k-mer TAC content,-0.000865065
+mirna_KMTGA: Transcript k-mer TGA content,0.001003491
+mirna_KMTGG: Transcript k-mer TGG content,0.000689924
+mirna_KMTGT: Transcript k-mer TGT content,0.003232849
+mirna_KMTGC: Transcript k-mer TGC content,0.000761288
+mirna_KMTTA: Transcript k-mer TTA content,0.000862986
+mirna_KMTTG: Transcript k-mer TTG content,0.001116041
+mirna_KMTTT: Transcript k-mer TTT content,0.000850424
+mirna_KMTTC: Transcript k-mer TTC content,0.00248282
+mirna_KMTCA: Transcript k-mer TCA content,0.000211646
+mirna_KMTCG: Transcript k-mer TCG content,0.000166381
+mirna_KMTCT: Transcript k-mer TCT content,0.001798764
+mirna_KMTCC: Transcript k-mer TCC content,0.001835908
+mirna_KMCAA: Transcript k-mer CAA content,0.001369639
+mirna_KMCAG: Transcript k-mer CAG content,0.000982019
+mirna_KMCAT: Transcript k-mer CAT content,0.000648121
+mirna_KMCAC: Transcript k-mer CAC content,0.000674754
+mirna_KMCGA: Transcript k-mer CGA content,-0.000130923
+mirna_KMCGG: Transcript k-mer CGG content,0.002971115
+mirna_KMCGT: Transcript k-mer CGT content,0.000264304
+mirna_KMCGC: Transcript k-mer CGC content,0.000425086
+mirna_KMCTA: Transcript k-mer CTA content,5.79E-05
+mirna_KMCTG: Transcript k-mer CTG content,0.000292583
+mirna_KMCTT: Transcript k-mer CTT content,0.003258648
+mirna_KMCTC: Transcript k-mer CTC content,0.000420221
+mirna_KMCCA: Transcript k-mer CCA content,0.00071791
+mirna_KMCCG: Transcript k-mer CCG content,-0.000398153
+mirna_KMCCT: Transcript k-mer CCT content,0.000899096
+mirna_KMCCC: Transcript k-mer CCC content,0.00061841
+mirna_EucDist.LNC,-2.98E-05
+mirna_EucDist.PCT,-0.000286298
+mirna_EucDist.Ratio,-0.000785135
+mirna_LogDist.LNC,0.00064998
+mirna_LogDist.PCT,0.000235089
+mirna_LogDist.Ratio,0.000833566
+mirna_ProII: Pseudo protein instability index,0.00072299
+mirna_ProPI: Pseudo protein isoelectric point,0.001337232
+mirna_ProAH: Pseudo protein average hydropathy,-0.000459909
+mirna_ProMW: Pseudo protein molecular weight,0.001476756
+mirna_PPMFS: Pseudo protein PI-MW frame score,0.001684693
+mirna_EipSP: Electron-ion interaction pseudopotential signal peak,0.0036977
+mirna_EipAP: Electron-ion interaction pseudopotential average power,0.007724852
+mirna_EiSNR: Electron-ion interaction pseudopotential signal/noise ratio,0.001314556
+mirna_EiPS0: Electron-ion interaction pseudopotential spectrum 0,0.003691024
+mirna_EiPS1: Electron-ion interaction pseudopotential spectrum 0.25,0.003551501
+mirna_EiPS2: Electron-ion interaction pseudopotential spectrum 0.5,0.003242916
+mirna_EiPS3: Electron-ion interaction pseudopotential spectrum 0.75,0.002387944
+mirna_EiPS4: Electron-ion interaction pseudopotential spectrum 1,0.002584067
+mirna_SLDLD: Structural logarithm distance to lncRNA of acguD,-0.000338741
+mirna_SLDPD: Structural logarithm distance to pcRNA of acguD,-7.43E-05
+mirna_SLDRD: Structural logarithm distance acguD ratio,0.000268446
+mirna_SLDLN: Structural logarithm distance to lncRNA of acguACGU,0.000510519
+mirna_SLDPN: Structural logarithm distance to pcRNA of acguACGU,0.000669432
+mirna_SLDRN: Structural logarithm distance acguACGU ratio,0.000419118
+mirna_SDMFE: Secondary structural minimum free energy,0.000305121
+mirna_SFPUS: Secondary structural UP frequency paired-unpaired,0.001407278
+mirna_nMFE,0.000976926
+lncrna_FickS: Fickett score,-0.000247588
+lncrna_SCCou: Stop codon count,0.00039352
+lncrna_SCFre: Stop codon frequency,0.00039729
+lncrna_SCCFS: Stop codon count frame score,0.000343827
+lncrna_SCFFS: Stop codon frequency frame score,0.000245036
+lncrna_LORFL: Longest ORF length,-0.000112819
+lncrna_ORFCo: ORF coverage,0.001715072
+lncrna_ORFIn: ORF integrity,0.003221638
+lncrna_ORFFS: ORF frame score,-2.09E-06
+lncrna_ORFEA: Entropy density A on ORF,0.001155579
+lncrna_ORFEC: Entropy density C on ORF,0.000939267
+lncrna_ORFED: Entropy density D on ORF,-6.79E-05
+lncrna_ORFEE: Entropy density E on ORF,0.000733576
+lncrna_ORFEF: Entropy density F on ORF,-0.000438984
+lncrna_ORFEG: Entropy density G on ORF,-0.00075169
+lncrna_ORFEH: Entropy density H on ORF,0.001865411
+lncrna_ORFEI: Entropy density I on ORF,0.00175956
+lncrna_ORFEK: Entropy density K on ORF,0.00223693
+lncrna_ORFEL: Entropy density L on ORF,0.001585519
+lncrna_ORFEM: Entropy density M on ORF,-0.000276464
+lncrna_ORFEN: Entropy density N on ORF,0.000686
+lncrna_ORFEP: Entropy density P on ORF,0.002682225
+lncrna_ORFEQ: Entropy density Q on ORF,0.002371218
+lncrna_ORFER: Entropy density R on ORF,-0.000826582
+lncrna_ORFES: Entropy density S on ORF,0.000668513
+lncrna_ORFET: Entropy density T on ORF,0.001689179
+lncrna_ORFEV: Entropy density V on ORF,0.00280729
+lncrna_ORFEW: Entropy density W on ORF,0.000296935
+lncrna_ORFEY: Entropy density Y on ORF,0.001243931
+lncrna_EucDist.LNC_orf,0.000436107
+lncrna_EucDist.PCT_orf,0.000427511
+lncrna_EucDist.Ratio_orf,0.002054875
+lncrna_LogDist.LNC_orf,0.000356628
+lncrna_LogDist.PCT_orf,0.001359079
+lncrna_LogDist.Ratio_orf,0.000188405
+lncrna_Hexamer.Score_orf,0
+lncrna_GCCoW: GC content of whole sequence,0.001298904
+lncrna_GCCo1: GC content of 1st position of codons,0.001333472
+lncrna_GCCo2: GC content of 2nd position of codons,0.001675543
+lncrna_GCCo3: GC content of 3rd position of codons,-0.001035274
+lncrna_GCC1V: GCCo1 variance frame score,-0.000641118
+lncrna_GCC2V: GCCo2 variance frame score,-0.000644274
+lncrna_GCC3V: GCCo3 variance frame score,-0.000479821
+lncrna_TraHS: Hexamer score on transcript,0
+lncrna_TrLen: Transcript length,0.000141614
+lncrna_L5UTR: Length of 5 untranslated region,-3.84E-05
+lncrna_L3UTR: Length of 3 untranslated region,0.000870644
+lncrna_C5UTR: Coverage of 5 untranslated region,0.004743305
+lncrna_C3UTR: Coverage of 3 untranslated region,0.005298777
+lncrna_TraEA: Entropy density A on transcript,0.002431646
+lncrna_TraEC: Entropy density C on transcript,0.003832626
+lncrna_TraED: Entropy density D on transcript,0.00246265
+lncrna_TraEE: Entropy density E on transcript,0.001248465
+lncrna_TraEF: Entropy density F on transcript,0.002051582
+lncrna_TraEG: Entropy density G on transcript,0.000694648
+lncrna_TraEH: Entropy density H on transcript,8.89E-05
+lncrna_TraEI: Entropy density I on transcript,-0.000216934
+lncrna_TraEK: Entropy density K on transcript,0.001324096
+lncrna_TraEL: Entropy density L on transcript,0.001426428
+lncrna_TraEM: Entropy density M on transcript,0.003497752
+lncrna_TraEN: Entropy density N on transcript,0.001289562
+lncrna_TraEP: Entropy density P on transcript,0.003679474
+lncrna_TraEQ: Entropy density Q on transcript,-0.000177592
+lncrna_TraER: Entropy density R on transcript,0.001606426
+lncrna_TraES: Entropy density S on transcript,-0.001090615
+lncrna_TraET: Entropy density T on transcript,0.002150054
+lncrna_TraEV: Entropy density V on transcript,0.003032129
+lncrna_TraEW: Entropy density W on transcript,0.003352104
+lncrna_TraEY: Entropy density Y on transcript,-0.000732429
+lncrna_ComRA: Composition of A,0.00260659
+lncrna_ComRT: Composition of T,0.001015304
+lncrna_ComRG: Composition of G,0.000884228
+lncrna_ComRC: Composition of C,0.000612418
+lncrna_TraAT: Transition between A and T,0.002430785
+lncrna_TraAG: Transition between A and G,0.001049786
+lncrna_TraAC: Transition between A and C,0.002511193
+lncrna_TraTG: Transition between T and G,0.005970201
+lncrna_TraTC: Transition between T and C,0.001140096
+lncrna_TraGC: Transition between G and C,-0.000352396
+lncrna_DPRA0: Distribution of 0.00A,-0.000278334
+lncrna_DPRA1: Distribution of 0.25A,-0.000571831
+lncrna_DPRA2: Distribution of 0.50A,-0.001048005
+lncrna_DPRA3: Distribution of 0.75A,-0.000315339
+lncrna_DPRA4: Distribution of 1.00A,0.009785809
+lncrna_DPRT0: Distribution of 0.00T,0.000540987
+lncrna_DPRT1: Distribution of 0.25T,-0.000338928
+lncrna_DPRT2: Distribution of 0.50T,5.35E-05
+lncrna_DPRT3: Distribution of 0.75T,0.000186821
+lncrna_DPRT4: Distribution of 1.00T,0.001071279
+lncrna_DPRG0: Distribution of 0.00G,-0.000228164
+lncrna_DPRG1: Distribution of 0.25G,-0.000540464
+lncrna_DPRG2: Distribution of 0.50G,0.000587822
+lncrna_DPRG3: Distribution of 0.75G,-0.001337153
+lncrna_DPRG4: Distribution of 1.00G,0.006250359
+lncrna_DPRC0: Distribution of 0.00C,3.51E-05
+lncrna_DPRC1: Distribution of 0.25C,0.001109951
+lncrna_DPRC2: Distribution of 0.50C,0.001486286
+lncrna_DPRC3: Distribution of 0.75C,0.000746014
+lncrna_DPRC4: Distribution of 1.00C,-0.001819139
+lncrna_KMAAA: Transcript k-mer AAA content,0.000413532
+lncrna_KMAAG: Transcript k-mer AAG content,0.001531834
+lncrna_KMAAT: Transcript k-mer AAT content,0.001907552
+lncrna_KMAAC: Transcript k-mer AAC content,0.000199795
+lncrna_KMAGA: Transcript k-mer AGA content,0.000357285
+lncrna_KMAGG: Transcript k-mer AGG content,0.00197658
+lncrna_KMAGT: Transcript k-mer AGT content,0.001642668
+lncrna_KMAGC: Transcript k-mer AGC content,0.002221799
+lncrna_KMATA: Transcript k-mer ATA content,0.000687512
+lncrna_KMATG: Transcript k-mer ATG content,0.011616867
+lncrna_KMATT: Transcript k-mer ATT content,0.001807159
+lncrna_KMATC: Transcript k-mer ATC content,-0.001737744
+lncrna_KMACA: Transcript k-mer ACA content,0.000247082
+lncrna_KMACG: Transcript k-mer ACG content,-2.01E-05
+lncrna_KMACT: Transcript k-mer ACT content,0.001678976
+lncrna_KMACC: Transcript k-mer ACC content,0.001534967
+lncrna_KMGAA: Transcript k-mer GAA content,6.84E-05
+lncrna_KMGAG: Transcript k-mer GAG content,0.000522153
+lncrna_KMGAT: Transcript k-mer GAT content,0.004377978
+lncrna_KMGAC: Transcript k-mer GAC content,0.00577526
+lncrna_KMGGA: Transcript k-mer GGA content,6.77E-05
+lncrna_KMGGG: Transcript k-mer GGG content,0.002547839
+lncrna_KMGGT: Transcript k-mer GGT content,0.001193524
+lncrna_KMGGC: Transcript k-mer GGC content,0.001179753
+lncrna_KMGTA: Transcript k-mer GTA content,0.001108653
+lncrna_KMGTG: Transcript k-mer GTG content,0.001351478
+lncrna_KMGTT: Transcript k-mer GTT content,0.002711849
+lncrna_KMGTC: Transcript k-mer GTC content,0.005617003
+lncrna_KMGCA: Transcript k-mer GCA content,0.009569064
+lncrna_KMGCG: Transcript k-mer GCG content,-0.000574826
+lncrna_KMGCT: Transcript k-mer GCT content,0.000903313
+lncrna_KMGCC: Transcript k-mer GCC content,0.001689882
+lncrna_KMTAA: Transcript k-mer TAA content,0.001712938
+lncrna_KMTAG: Transcript k-mer TAG content,0.004686
+lncrna_KMTAT: Transcript k-mer TAT content,-0.001098667
+lncrna_KMTAC: Transcript k-mer TAC content,0.000249017
+lncrna_KMTGA: Transcript k-mer TGA content,0.008838794
+lncrna_KMTGG: Transcript k-mer TGG content,0.003156346
+lncrna_KMTGT: Transcript k-mer TGT content,0.001183688
+lncrna_KMTGC: Transcript k-mer TGC content,0.006072102
+lncrna_KMTTA: Transcript k-mer TTA content,0.002185576
+lncrna_KMTTG: Transcript k-mer TTG content,0.004910067
+lncrna_KMTTT: Transcript k-mer TTT content,0.002161166
+lncrna_KMTTC: Transcript k-mer TTC content,0.001639311
+lncrna_KMTCA: Transcript k-mer TCA content,-0.000313522
+lncrna_KMTCG: Transcript k-mer TCG content,-2.69E-05
+lncrna_KMTCT: Transcript k-mer TCT content,8.33E-05
+lncrna_KMTCC: Transcript k-mer TCC content,0.002266773
+lncrna_KMCAA: Transcript k-mer CAA content,0.002915645
+lncrna_KMCAG: Transcript k-mer CAG content,0.00147498
+lncrna_KMCAT: Transcript k-mer CAT content,0.00113775
+lncrna_KMCAC: Transcript k-mer CAC content,6.49E-05
+lncrna_KMCGA: Transcript k-mer CGA content,0.005350296
+lncrna_KMCGG: Transcript k-mer CGG content,-0.000138751
+lncrna_KMCGT: Transcript k-mer CGT content,0.006711242
+lncrna_KMCGC: Transcript k-mer CGC content,-0.00092551
+lncrna_KMCTA: Transcript k-mer CTA content,0.002926103
+lncrna_KMCTG: Transcript k-mer CTG content,0.005090334
+lncrna_KMCTT: Transcript k-mer CTT content,0.001443015
+lncrna_KMCTC: Transcript k-mer CTC content,0.001262077
+lncrna_KMCCA: Transcript k-mer CCA content,0.000930731
+lncrna_KMCCG: Transcript k-mer CCG content,0.000290065
+lncrna_KMCCT: Transcript k-mer CCT content,0.002543779
+lncrna_KMCCC: Transcript k-mer CCC content,0.002554767
+lncrna_EucDist.LNC,0.002036974
+lncrna_EucDist.PCT,0.001313356
+lncrna_EucDist.Ratio,0.003105662
+lncrna_LogDist.LNC,0.000377549
+lncrna_LogDist.PCT,0.000919038
+lncrna_LogDist.Ratio,0.000457676
+lncrna_ProII: Pseudo protein instability index,0.001160579
+lncrna_ProPI: Pseudo protein isoelectric point,0.001471315
+lncrna_ProAH: Pseudo protein average hydropathy,0.000405019
+lncrna_ProMW: Pseudo protein molecular weight,-0.00019542
+lncrna_PPMFS: Pseudo protein PI-MW frame score,-8.98E-05
+lncrna_EipSP: Electron-ion interaction pseudopotential signal peak,0.000467587
+lncrna_EipAP: Electron-ion interaction pseudopotential average power,0.000140374
+lncrna_EiSNR: Electron-ion interaction pseudopotential signal/noise ratio,0.000219004
+lncrna_EiPS0: Electron-ion interaction pseudopotential spectrum 0,0.000262269
+lncrna_EiPS1: Electron-ion interaction pseudopotential spectrum 0.25,0.000224233
+lncrna_EiPS2: Electron-ion interaction pseudopotential spectrum 0.5,0.00027029
+lncrna_EiPS3: Electron-ion interaction pseudopotential spectrum 0.75,0.000307878
+lncrna_EiPS4: Electron-ion interaction pseudopotential spectrum 1,0.000201387
+lncrna_SLDLD: Structural logarithm distance to lncRNA of acguD,0.00031568
+lncrna_SLDPD: Structural logarithm distance to pcRNA of acguD,3.10E-05
+lncrna_SLDRD: Structural logarithm distance acguD ratio,0.000327732
+lncrna_SLDLN: Structural logarithm distance to lncRNA of acguACGU,-2.69E-05
+lncrna_SLDPN: Structural logarithm distance to pcRNA of acguACGU,0.000262437
+lncrna_SLDRN: Structural logarithm distance acguACGU ratio,0.002303161
+lncrna_SDMFE: Secondary structural minimum free energy,-0.001888464
+lncrna_SFPUS: Secondary structural UP frequency paired-unpaired,0.002285445
+lncrna_nMFE,-0.000497007
