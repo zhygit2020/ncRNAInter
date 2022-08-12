@@ -2,7 +2,6 @@
 ##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Minjie Mou, Bing Zhang, Zhanrong Li, Honglin Li* and Feng Zhu*
 ## Dependencies
 - ncRNAInter should be deployed on Linux.
-- Dependencies can be installed using `pip install -r requirements.txt`.
 - To use GPU, please install the gpu version of `dgl` and `pytorch`.
 ## Usage
 ### --- Predict new lncRNA-miRNA interactions using pre-trained models with pre-built graph and original LMI data ---
@@ -12,7 +11,7 @@
 
 ##### 1.2 Apply the original graph and pre-trained models by executing the following command:
 ```
-python ./run.py --lr 5e-4 --hidden_dim 192 --feature_type RNA_intrinsic --batch_size 32 --n_epochs 512 --KFold_num 5 --task_type run --run_mode predict_on_rna --gpu -1 
+python ./run.py --lr 5e-4 --hidden_dim 256 --feature_type RNA_intrinsic --batch_size 32 --n_epochs 512 --KFold_num 5 --task_type run --run_mode predict_on_rna --gpu -1 
 ```
 ​		following parameters stipulate the specific graph and the pre-trained model to apply:
 - `--lr`, set the learning rate while training, default is 5e-4.
@@ -41,7 +40,7 @@ python ./run.py --lr 5e-4 --hidden_dim 192 --feature_type RNA_intrinsic --batch_
 ​		Practicable RNAs could refer to the default files introduced above. If users have priori information of those pairs, labels should be placed under column "Label". Otherwise, fill the blanks with "-1".
 ##### 2.2 Apply the original graph and pre-trained models by executing the following command:
 ```
-python ./run.py --lr 5e-4 --hidden_dim 192 --feature_type RNA_intrinsic --batch_size 32 --n_epochs 512 --KFold_num 5 --task_type run --run_mode predict_on_pair --gpu -1 
+python ./run.py --lr 5e-4 --hidden_dim 256 --feature_type RNA_intrinsic --batch_size 32 --n_epochs 512 --KFold_num 5 --task_type run --run_mode predict_on_pair --gpu -1 
 ```
 ​		following parameters stipulate the specific graph and the pre-trained model to apply:
 - `--lr`, set the learning rate while training, default is 5e-4.
@@ -70,7 +69,7 @@ python ./run.py --lr 5e-4 --hidden_dim 192 --feature_type RNA_intrinsic --batch_
 ​		Practicable RNAs could refer to the default files introduced above.
 ##### 3.2 Apply the original graph and pre-trained models by executing the following command:
 ```
-python ./run.py --lr 5e-4 --hidden_dim 192 --feature_type RNA_intrinsic --batch_size 32 --n_epochs 512 --KFold_num 5 --task_type run --run_mode predict_on_rna --gpu -1 
+python ./run.py --lr 5e-4 --hidden_dim 256 --feature_type RNA_intrinsic --batch_size 32 --n_epochs 512 --KFold_num 5 --task_type run --run_mode predict_on_rna --gpu -1 
 ```
 ​		following parameters stipulate the specific graph and the pre-trained model to apply:
 - `--lr`, set the learning rate while training, default is 5e-4.
