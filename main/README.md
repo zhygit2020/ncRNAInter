@@ -16,7 +16,7 @@ python ./run.py --lr 5e-4 --hidden_dim 256 --feature_type RNA_intrinsic --batch_
 ​		following parameters stipulate the specific graph and the pre-trained model to apply:
 - `--lr`, set the learning rate while training, default is 5e-4.
 
-- `--hidden_dim`, set the number of hidden GraphSAGE units, default is 192.
+- `--hidden_dim`, set the number of hidden GraphSAGE units, default is 256.
 
 - `--feature_type`, set the type of RNA feature representation which would be applied, default is RNA_intrinsic.
 
@@ -45,7 +45,7 @@ python ./run.py --lr 5e-4 --hidden_dim 256 --feature_type RNA_intrinsic --batch_
 ​		following parameters stipulate the specific graph and the pre-trained model to apply:
 - `--lr`, set the learning rate while training, default is 5e-4.
 
-- `--hidden_dim`, set the number of hidden GraphSAGE units, default is 192.
+- `--hidden_dim`, set the number of hidden GraphSAGE units, default is 256.
 
 - `--feature_type`, set the type of RNA feature representation which would be applied, default is RNA_intrinsic.
 
@@ -74,7 +74,7 @@ python ./run.py --lr 5e-4 --hidden_dim 256 --feature_type RNA_intrinsic --batch_
 ​		following parameters stipulate the specific graph and the pre-trained model to apply:
 - `--lr`, set the learning rate while training, default is 5e-4.
 
-- `--hidden_dim`, set the number of hidden GraphSAGE units, default is 192.
+- `--hidden_dim`, set the number of hidden GraphSAGE units, default is 256.
 
 - `--feature_type`, set the type of RNA feature representation which would be applied, default is RNA_intrinsic.
 
