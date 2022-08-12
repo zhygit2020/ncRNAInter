@@ -9,17 +9,25 @@
 3. The ncRNAInter tree includes three package:
 ```
  |- comparison
+     |- Human
+     	|- CNN
+     	|- LMI-INGI
+     	|- LncMirNet
+     	|- PmliPred_human
+     	|- preMLI_human
+     	|- RF
+     	|- SVM
      |- Plants
-        |- PmliPred_plant
         |- ncRNAInter_plant
-     |- PmliPred_human
-     |- LMI-INGI
+        |- PmliPred_plant
+     |- Virus
+     	|- ncRNAInter_virus
  |- main
      |- data
-     |- data_process
+     |- feature_importance
      |- models
      |- pretrained
-     |- test_result
+     |- run_result
      |- utils
      |- K_fold_trainval.py
      |- run.py
@@ -29,9 +37,9 @@
  |- README.md
  |- LICENSE
 ```
-Directory of `comparison` deposits the reproduced methods used in comparison with ncRNAInter, including their datasets and retrained models. Usage is explained in `./comparison/README.md`.
+Directory of `comparison` deposits the reproduced methods used in comparison with ncRNAInter, including their datasets and retrained models. 
 
-Directory of `statistic` deposits the scripts we used to plot. Usage is explained in `./statistic/README.md`.
+Directory of `statistic` deposits the scripts we used to plot.
 
 Directory of `main` deposits the basis of ncRNAInter, including source code, datasets and pretrained models. Usage of ncRNAInter is explained in `./main/README.md`.
 
