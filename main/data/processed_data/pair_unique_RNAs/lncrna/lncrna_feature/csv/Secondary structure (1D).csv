@@ -1,4 +1,4 @@
-,Seqname,SLDLD: Structural logarithm distance to lncRNA of acguD,SLDPD: Structural logarithm distance to pcRNA of acguD,SLDRD: Structural logarithm distance acguD ratio,SLDLN: Structural logarithm distance to lncRNA of acguACGU,SLDPN: Structural logarithm distance to pcRNA of acguACGU,SLDRN: Structural logarithm distance acguACGU ratio,SDMFE: Secondary structural minimum free energy,SFPUS: Secondary structural UP frequency paired-unpaired,nMFE
+,Seqname,0,1,2,3,4,5,6,7,8
 0,ENST00000448179.1,-0.040962,-0.049291,0.831032,-0.040269,-0.042813,0.940576,-1286.5,0.12689,-0.422774
 1,ENST00000398216.2,-0.654172,-0.691518,0.945993,-0.460991,-0.475981,0.968507,-178.6,0.126697,-0.40316
 2,ENST00000417705.1,-0.105769,-0.126352,0.837098,-0.101094,-0.107539,0.940068,-638.7,0.122478,-0.459827

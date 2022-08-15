@@ -1,4 +1,4 @@
-,Seqname,EipSP: Electron-ion interaction pseudopotential signal peak,EipAP: Electron-ion interaction pseudopotential average power,EiSNR: Electron-ion interaction pseudopotential signal/noise ratio,EiPS0: Electron-ion interaction pseudopotential spectrum 0,EiPS1: Electron-ion interaction pseudopotential spectrum 0.25,EiPS2: Electron-ion interaction pseudopotential spectrum 0.5,EiPS3: Electron-ion interaction pseudopotential spectrum 0.75,EiPS4: Electron-ion interaction pseudopotential spectrum 1
+,Seqname,0,1,2,3,4,5,6,7
 0,ENST00000448179.1,7.363078,42.525786,0.173144,3.968341,4.519104,5.206739,6.581155,21.119792
 1,ENST00000398216.2,0.348962,6.138991,0.056844,0.549258,0.581106,0.717955,0.899496,1.38905
 2,ENST00000417705.1,0.571318,19.153976,0.029828,1.779603,2.073526,2.390633,3.157937,6.654402

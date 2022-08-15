@@ -1,4 +1,4 @@
-,Seqname,EipSP: Electron-ion interaction pseudopotential signal peak,EipAP: Electron-ion interaction pseudopotential average power,EiSNR: Electron-ion interaction pseudopotential signal/noise ratio,EiPS0: Electron-ion interaction pseudopotential spectrum 0,EiPS1: Electron-ion interaction pseudopotential spectrum 0.25,EiPS2: Electron-ion interaction pseudopotential spectrum 0.5,EiPS3: Electron-ion interaction pseudopotential spectrum 0.75,EiPS4: Electron-ion interaction pseudopotential spectrum 1
+,Seqname,0,1,2,3,4,5,6,7
 0,hsv1-miR-H1-5p,0.04007,0.236192,0.169649,0.04007,0.04007,0.04007,0.04007,0.04007
 1,hsv1-miR-H2-5p,0.050926,0.317687,0.160301,0.050926,0.050926,0.050926,0.050926,0.050926
 2,hsv1-miR-H2-3p,0.015433,0.317006,0.048684,0.071931,0.071931,0.071931,0.071931,0.071931

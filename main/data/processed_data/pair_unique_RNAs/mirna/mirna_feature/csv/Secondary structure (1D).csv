@@ -1,4 +1,4 @@
-,Seqname,SLDLD: Structural logarithm distance to lncRNA of acguD,SLDPD: Structural logarithm distance to pcRNA of acguD,SLDRD: Structural logarithm distance acguD ratio,SLDLN: Structural logarithm distance to lncRNA of acguACGU,SLDPN: Structural logarithm distance to pcRNA of acguACGU,SLDRN: Structural logarithm distance acguACGU ratio,SDMFE: Secondary structural minimum free energy,SFPUS: Secondary structural UP frequency paired-unpaired,nMFE
+,Seqname,0,1,2,3,4,5,6,7,8
 0,hsa-miR-136-5p,-28.403917,-28.39009,1.000487,-20.857033,-20.813362,1.002098,-4.3,0.090909,-0.186957
 1,hsa-miR-148a-3p,-32.744385,-32.735793,1.000262,-22.205469,-22.103357,1.00462,0,0,0
 2,hsa-miR-148b-3p,-29.555019,-29.55621,0.99996,-21.812316,-21.761315,1.002344,-0.7,0.142857,-0.031818
