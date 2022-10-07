@@ -44,4 +44,6 @@ Directory of `statistic` deposits the scripts we used to plot.
 Directory of `main` deposits the basis of ncRNAInter, including source code, datasets and pretrained models. Usage of ncRNAInter is explained in `./main/README.md`.
 
 ## Disclaimer
-ncRNAInter manuscript is under review, the information presented is for information purposes only. Should you have any questions, please contact Dr. Zhang at hanyu_zhang@zju.edu.cn
+For more information, please refer to https://doi.org/10.1093/bib/bbac411 and cite Zhang, Hanyu et al. ncRNAInter: a novel strategy based on graph neural network to discover interactions between lncRNA and miRNA. *Briefings in bioinformatics*, bbac411. 4 Oct. 2022, doi:10.1093/bib/bbac411. PMID:36198065
+
+Should you have any questions, please contact Dr. Zhang at hanyu_zhang@zju.edu.cn
