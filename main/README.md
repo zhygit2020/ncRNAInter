@@ -64,5 +64,9 @@ python ./run.py --lr 5e-4 --hidden_dim 256 --feature_type RNA_intrinsic --batch_
 - `--gpu`, set the GPU id the program would run on, while -1 for CPU.
 
   __Output:__ the output  will be under the automatically generated `./run_result/prepair/` directory, the .csv file of `logits_of_prepair.csv` contains ranked logits of the evaluating pairs. For example, the results of 3 LM-pairs investigated in this study are provided. 
-## Disclaimer
-ncRNAInter manuscript is under review, the information presented is for information purposes only. Should you have any questions, please contact Dr. Zhang at hanyu_zhang@zju.edu.cn
+## Citation and Disclaimer
+
+For more information, please refer to and cite: Zhang, Hanyu et al. ncRNAInter: a novel strategy based on graph neural network to discover interactions between lncRNA and miRNA. *Briefings in bioinformatics*, bbac411. 4 Oct. 2022. PMID:36198065. https://doi.org/10.1093/bib/bbac411.
+
+Should you have any questions, please contact Dr. Zhang at hanyu_zhang@zju.edu.cn
+
