@@ -196,8 +196,8 @@ class Trainer:
         _pres_v, _recs_v, _thresholds_prc_v = 0,0,0
         _tn_v, _fp_v, _fn_v, _tp_v = 0,0,0,0
         _auc_v, _mcc_v, _precision_v, _recall_v, _specificity_v, _sensitivity_v, _f1_v, _prauc_v, _av_prc_v = 0,0,0,0,0,0,0,0,0
-        _model = None
-        _optimizer = None
+        # _model = None
+        # _optimizer = None
         _loss_epochs_t, _acc_epochs_t, _loss_epochs_v, _acc_epochs_v = {},{},{},{}
         _epoch_edge_labels_t, _epoch_edge_logits_t, _epoch_edge_scores_t, _epoch_edge_ids_t, _epoch_edge_labels_v, _epoch_edge_logits_v, _epoch_edge_scores_v, _epoch_edge_ids_v = torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([]),torch.tensor([])
 
@@ -285,8 +285,12 @@ class Trainer:
                 _f1_v = f1_v
                 _prauc_v, _av_prc_v = prauc_v, av_prc_v
 
-                _model = kth_model
-                _optimizer = kth_optimizer
+                # _model = kth_model
+                # _optimizer = kth_optimizer
+
+                # save best kth model
+                self.save_model(k, kth_model, kth_optimizer)
+
             if acc_t == 1:
                 break
             print(
@@ -297,9 +301,6 @@ class Trainer:
                 f"Train AUC {auc_t:.4f}, Train_prauc {prauc_t:.4f}, Train_av_prc {av_prc_t:.4f}, Val AUC {auc_v:.4f}, Val_prauc {prauc_v:.4f}, Val_av_prc {av_prc_v:.4f}", file=kth_log_file)
         print("epoch trainval finished", file=kth_log_file)
         ### epochs finish ### 
-
-        # save best kth model
-        self.save_model(k, _model, _optimizer)
 
         # save best kth Fold ROC data
         ROC_savepath = self.save_path / 'ROC_data' / f'{k}th_Fold'
