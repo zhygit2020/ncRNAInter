@@ -1,5 +1,7 @@
 # ncRNAInter
+## *NOTE*: the scripts of feature generation for comprehensive RNA representation have been updated
 [![python 3.8](https://img.shields.io/badge/python-3.8-brightgreen)](https://www.python.org/)
+
 ### ncRNAInter: A Novel Strategy Based on Graph Neural Network to Discover Interactions between lncRNA and miRNA
 ##### Hanyu Zhang, Yunxia Wang, Ziqi Pan, Xiuna Sun, Minjie Mou,  Bing Zhang, Zhanrong Li, Honglin Li* and Feng Zhu*
 
@@ -24,6 +26,7 @@
      	|- ncRNAInter_virus
  |- main
      |- data
+     |- data_process
      |- feature_importance
      |- models
      |- pretrained
