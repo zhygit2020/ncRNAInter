@@ -6,7 +6,7 @@
 ## Dependencies
 
 - ncRNAInter should be deployed on Linux.
-- Main requirments: pytorch==1.8.1, dgl==0.6.1, r-base==3.6.1, rpy2==3.5.10, viennarna==2.3.3, scikit-learn==0.24.1, scipy==1.6.2.
+- Main requirments: `pytorch==1.8.1`, `dgl==0.6.1`, `r-base==3.6.1`, `rpy2==3.5.10`, `viennarna==2.3.3`, `scikit-learn==0.24.1`, `scipy==1.6.2`.
 - To use GPU, please install the gpu version of `dgl` and `pytorch`.
 
 
