@@ -1,5 +1,4 @@
 # ncRNAInter
-## *NOTE*: the scripts of feature generation for comprehensive RNA representation have been updated
 [![python 3.8](https://img.shields.io/badge/python-3.8-brightgreen)](https://www.python.org/)
 
 ### ncRNAInter: A Novel Strategy Based on Graph Neural Network to Discover Interactions between lncRNA and miRNA
